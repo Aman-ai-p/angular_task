@@ -1,0 +1,116 @@
+<section class="wrapper">
+
+    <div class="button d-flex justify-center">
+        <button type="button" routerLink="/resume/resumeform">Create Your Resume</button>
+    </div>
+    <!-- Start: section -->
+    <section style="max-width: 800px; margin: auto; padding: 30px 0;">
+
+        <!-- Start: Container -->
+        <div style="font-family: 'Source Serif Pro', serif; border-top: 5px solid #555; border-bottom: 5px solid #555; background-color:rgb(246, 245, 245); padding: 30px; ">
+            
+            <!--  Start: Row 1 -->
+            <table style="width:100%; border-bottom: 1px solid rgba(85, 85, 85, 0.473);">
+                <tr>
+                    <td><h1 style="margin-bottom:5px;">{{resumeData.name}}</h1>
+                    <p style="font-weight: bold; margin-top: 0;">{{resumeData.post}}</p>
+                    </td>
+                    <td style="width: 200px;">
+                        <p><button>Download PDF</button></p>
+                        <a href="mailto:name@yourdomain.com" style="color: red; font-weight: bold;">{{resumeData.email}}</a>
+                        <p style="font-weight: bold; margin-top: 0;">{{resumeData.phone}}</p>
+                    </td>
+                </tr>
+            </table>
+            <!-- End: Row 1 -->
+
+            <!-- Start: Row 2 -->
+            <table style=" padding-top: 20px; width: 100%; padding-right: 5px; border-bottom: 1px solid rgba(85, 85, 85, 0.473); padding-bottom: 15px;">
+                <tr>
+                    <td style="vertical-align: top; width: 20%;"><i>Profile</i></td>
+                    <td style="width: 80%;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus dolores architecto ad minus at facere odio, iusto saepe? Fugiat, incidunt quisquam. Dolore rerum aut quia? Nam mollitia aliquam ut quod?</td>
+                </tr>
+            </table>
+            <!-- End: Row 2 -->
+
+            <!-- Start: Row 3 -->
+            <table style=" width: 100%;  border-bottom: 1px solid rgba(85, 85, 85, 0.473); padding-bottom: 15px;">
+                <tr>
+                    <td style="vertical-align: top; padding-top: 20px; width: 20%;"><i>Skills</i></td>
+                    <td style="padding: 0; width: 80%;">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td><h3>Web Design</h3></td>
+                                <td><h3>Interface Design</h3></td>
+                                <td><h3>Project Direction</h3></td>
+                            </tr>
+                            <tr>
+                                <td><p style="margin-top: 0;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam eos debitis, veniam</p></td>
+                                <td><p style="margin-top: 0;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam eos debitis, veniam</p></td>
+                                <td><p style="margin-top: 0;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam eos debitis, veniam</p></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!-- End: Row 3 -->
+
+            <!-- Start: Row 4 -->
+            <table style=" width: 100%;  border-bottom: 1px solid rgba(85, 85, 85, 0.473); padding-bottom: 15px;">
+                <tr>
+                    <td style="vertical-align: top; padding-top: 20px; width: 20%;"><i>Technical</i></td>
+                    <div style="padding-top: 20px;">
+                        <div  style="display: flex; flex-wrap: wrap;">
+                            <div *ngFor="let data of resumeData.skill"  style="display: flex; flex-basis: 33.33%; border-bottom: 1px solid rgba(85, 85, 85, 0.473);">
+                                <div>{{data.skill}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+            </table>
+            <!-- End: Row 4 -->
+
+            <!-- Start: Row 5 -->
+            <table style=" width: 100%;  border-bottom: 1px solid rgba(85, 85, 85, 0.473); padding-bottom: 15px;">
+                <tr>
+                    <td style="vertical-align: top; padding-top: 20px; width: 20%;"><i>Experience</i></td>
+                    <td>
+                        <table style=" width: 100%; padding-bottom: 15px;">
+                            <div style="border-bottom: 1px solid rgba(85, 85, 85, 0.473);" *ngFor="let data of resumeData.experience">
+                                    <tr >
+                                        <td><h3 style="margin-bottom:0;">{{data.exp}}</h3>
+                                        <p style="margin-top: 0;">{{data.post}}</p></td>
+                                        <td style="width: 13%; vertical-align: top;"><p>{{data.year}}</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero voluptates quas maxime quaerat, dignissimos distinctio deleniti quo, corrupti </td>
+                                    </tr>
+                            </div>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!-- End: Row 5 -->
+
+            <!-- Start: Row 6 -->
+            <table style=" width: 100%;  border-bottom: 1px solid rgba(85, 85, 85, 0.473); padding-bottom: 15px;">
+                <tr>
+                    <td style="vertical-align: top; padding-top: 20px; width: 20%;"><i>Education</i></td>
+                    <div style="border-bottom: 1px solid rgba(85, 85, 85, 0.473);"  *ngFor="let data of resumeData.education">
+                        <td><h3 style="margin-bottom:0;">{{data.education}}</h3>
+                        <p style="margin-top: 0;">{{data.major}}: GPA-{{data.gpa}}</p></td>
+                    </div>
+                </tr>
+            </table>
+            <!-- End: Row 6 -->
+
+            <!-- Start: last row -->
+            <p style="vertical-align: top; text-align: center; margin: 0;">{{resumeData.name}}-<a href="mailto:name@yourdomain.com" style="color: red; font-weight: bold">{{resumeData.email}}-</a>{{resumeData.phone}}</p>
+            <!-- End: last row -->
+            
+        </div>
+        <!-- End: Container -->
+    </section>
+    <!-- End: section -->
+
+</section>

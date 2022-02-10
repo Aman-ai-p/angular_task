@@ -6,14 +6,31 @@
     flex-direction: column;
 }
 
+.justify-center{
+    justify-content: center;
+}
+
 .asidebar{
-    margin: 20px;
-    padding-right: 10px;
+    width: 250px;
+    height: 100%;
+    // background-color: #4EA8DE;
+    border-right: 1px solid rgb(206, 206, 206);
+}
+
+.header{
+    height: 70px;
+    background-color: white;
+    border-bottom: 1px solid rgb(206, 206, 206);
 }
 
 .nav{
     ul{
-        list-style: none;
-        
+        li{
+            list-style: none;
+            font-size: 1.2rem;
+            color: black;
+        }
     }
+    
 }
+
