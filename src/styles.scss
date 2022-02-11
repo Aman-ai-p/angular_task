@@ -1,12 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Roboto', sans-serif;
+}
 
 html,body{
     height: 100%;
+    overflow: hidden;
 }
 
-body{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+.d-flex{
+    display: flex;
+}
+
+.flex-grow{
+    flex-grow: 1;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.justify-content-between{
+    justify-content: space-between;
+}
+
+.wrapper{
+    height: 100%;
+    width: 100%;
+}
+
+.aside{
+    height: 100%;
+    width: 250px;
+}
+
+.outlet{
+    background-color: #f7f8fa;
+    border: 10px solid red;
 }

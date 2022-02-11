@@ -1,12 +1,31 @@
-<aside class="asidebar d-flex flex-col">
-    <header class="header d-flex justify-center">
-        logo
+<aside class="asidebar d-flex flex-column">
+
+    <!-- Brand logo -->
+    <header class="header d-flex justify-content-center align-items-center">
+       <i><img src="../../../../assets/images/bxl-angular.svg" alt=""></i>
+       <h1>TASK</h1>
     </header>
+    
+    <!-- Nav list -->
     <nav class="nav d-flex">
-        <ul>
-            <!-- <li><a routerlink="dpipes">Directives and Pipes</a></li> -->
-            <li><a routerlink="user">User</a></li>
-            <li><a routerLink="resume" routerLinkActive="active"><p>ResumeBuilder</p></a></li>
+        <ul class="d-flex flex-column">
+            <li class="nav-list d-flex justify-content-center align-items-center"><a class="d-flex align-items-center" routerLink="users" routerLinkActive="active">
+                <i class='bx bxs-user-detail'></i>
+                <span>User</span></a>
+            </li>
+            <li class="nav-list d-flex justify-content-center align-items-center"><a class="d-flex align-items-center" routerLink="resume" routerLinkActive="active">
+                <i class='bx bx-notepad'></i>
+                <span>Resume Builder</span></a>
+            </li>
         </ul>
     </nav>
+
+    <footer class="footer d-flex flex-column">
+        <div class="log-out d-flex justify-content-center align-items-center">
+            <a class="d-flex align-items-center" routerLink="users" routerLinkActive="active">
+            <i class='bx bx-log-out'></i>
+            <h1>Log Out</h1></a>
+        </div>
+    </footer>
+    
 </aside>

@@ -1,36 +1,125 @@
+// Flex Properties
 .d-flex{
     display: flex;
 }
 
-.flex-col{
+.flex-column{
     flex-direction: column;
 }
 
-.justify-center{
+.justify-content-center{
     justify-content: center;
 }
 
+.align-items-center{
+    align-items: center;
+}
+
+.flex-grow{
+    flex-grow: 1;
+}
+
+// Sidebar
 .asidebar{
-    width: 250px;
+    width: 100%;
     height: 100%;
-    // background-color: #4EA8DE;
+    background-color: #fff;
     border-right: 1px solid rgb(206, 206, 206);
 }
 
 .header{
-    height: 70px;
-    background-color: white;
+    height:  4.375em;
+    background-color: #ffffff;
     border-bottom: 1px solid rgb(206, 206, 206);
+    flex-shrink: 0;
+    img{
+        width: 50px;
+   }
+
+   h1{
+        color:#365ccb
+   }
 }
 
+// Nav list
 .nav{
+    padding: 40px 0;
+    flex-grow: 1;
+    overflow: auto;
     ul{
+        padding: 0 10px;
+        width: 100%;
         li{
             list-style: none;
+            height: 40px;
+            width: 100%;  
+            margin: 5px 0; 
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #808080;
+            height: 100%;
+            width: 100%;  
+            padding-left: 20px;
+
+            &:hover{
+                background-color: #ebedfb;
+                color: #5b6ca3;
+                border-radius: 10px;
+            }
+
+            &.active{
+                background-color: #ebedfb;
+                color: rgb(43, 72, 167);
+                border-radius: 10px;
+            }
+        }
+    } 
+}
+
+.nav-list{
+    i{
+        font-size: 1.2rem;
+        padding: 0 10px;
+    }
+    a{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}
+
+// footer
+.footer{
+    height:  4.375em;
+    background-color: #ffffff;
+    border-top: 1px solid rgb(206, 206, 206);
+    flex-shrink: 0;
+
+    .log-out{
+        i{
             font-size: 1.2rem;
-            color: black;
+            padding: 0 10px;
+        }
+        a{
+            height: 100%;
+            width: 100%;  
+            padding: 0 50px;
+            text-decoration: none;
+            color: #808080;
+            font-size: 1rem;
+            font-weight: 500;
+
+            &:hover{
+                background-color: #ebedfb;
+                color: #5b6ca3;
+            }
         }
     }
-    
 }
+
+
 

@@ -3,7 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: "", redirectTo : '', pathMatch: "full"
+    path: "", redirectTo : 'users', pathMatch: "full"
+  },
+  {
+    path: "users", 
+    loadChildren: () => import('./modules/usermodule/usermodule.module').then(m => m.UsermoduleModule)
   },
   { 
     path: 'resume', 

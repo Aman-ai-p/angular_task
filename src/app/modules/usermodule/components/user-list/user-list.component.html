@@ -1,0 +1,42 @@
+
+<section class="user flex-grow">
+    
+    <header class="d-flex">
+        <div class="container d-flex" id="header">
+            <h1>User Lists</h1>
+        </div>
+    </header>
+
+    <div class="container d-flex justify-content-between">
+        <div class="d-flex">
+            <input class="search" type="text" placeholder="Search" [(ngModel)]="search">
+        </div>
+        <div class="d-flex"> 
+            <button class="btn" routerLink="/users/userform">Add User</button>
+        </div>  
+    </div>
+    
+    <div id="table-product">
+        <table class="table-product">
+            <tr>
+                <th>Name</th>
+                <th>E-mail</th>
+                <th>Gender</th>
+                <th>Date of Joining</th>
+                <th>Department</th>
+                <th>Action</th>
+            </tr>
+    
+            <tr *ngFor="let user of userdata | searchText:search">
+                <td>{{user.firstname + ' ' + user.lastname}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.date | date: 'dd/MM/yyyy' }}</td>
+                <td>{{user.department | getByid:dept }}</td>
+                <td><button routerLink="../edit/{{user.id}}">Edit</button><button (click)="ondelete(user.id)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+
+</section>
+
