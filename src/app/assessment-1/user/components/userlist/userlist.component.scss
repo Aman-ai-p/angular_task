@@ -1,0 +1,132 @@
+:host{
+    width: 100%;
+}
+
+.d-flex{
+    display: flex;
+}
+
+
+// flex-property
+.flex-column{
+    flex-direction: column;
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.justify-content-between{
+    justify-content: space-between;
+}
+
+.justify-content-end{
+    justify-content: end;
+}
+
+.bg-color{
+    background-color: #2f6bff;
+}
+
+
+// wrapper
+.wrapper{
+    padding: 40px 40px;
+    height: 100%;
+}
+
+// Header
+.head-title{
+    width: 80%;
+}
+
+.head-form{
+    label{
+        padding: 10px 5px;
+    }
+    select{
+        width: 25%;
+        height: 20px;
+        margin: 10px 0;
+    }
+    i{
+        padding: 10px 0;
+        font-size: 20px;
+    }
+    a{
+        text-align: center;
+        margin: 0 10px;
+        padding: 10px 0;
+        width: 120px;
+        color: white;
+    }
+}
+
+// main section
+.main{
+    padding-top: 30px;
+}
+
+.form{
+    width: 100%;
+}
+
+.input-tag{
+    input{
+        width:25%;
+        padding: 0 5px;
+        margin: 0 10px;
+        height: 40px;
+    }
+}
+
+.select-tag{
+    padding: 20px 0;
+    select{
+        width: 30%;
+        height: 40px;
+        padding: 0 5px;
+        margin: 0 10px;
+    }
+}
+
+.list-container{
+    margin: 30px 0  ;
+    width: 100%;
+}
+
+// Button
+.btn{
+    width: 10%;
+    height: 40px;
+    margin: 10px;
+    color: white;
+    border: none;
+}
+
+.cancel-btn{
+    background-color: #171f46;
+}
+
+// Table
+.table-product {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-product th {
+    padding: 10px 10px;
+    text-align: left;
+    background-color: #e6e7eb;
+    color: black;
+}
+
+.table-product td{
+    padding: 5px 10px;
+}
+
+input.ng-touched.ng-invalid{
+    border-color: red;
+}
+
+

@@ -84,12 +84,6 @@ export class UserFormComponent implements OnInit {
     })
   }
 
-  skillAdd():FormGroup{
-    return this.uf.group({
-      skills:['']
-    })
-  }
-
 
   // Reset the Form
   resetform(){

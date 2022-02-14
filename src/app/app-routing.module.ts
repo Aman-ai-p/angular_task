@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: "", redirectTo : 'users', pathMatch: "full"
+    path: "", redirectTo : 'user', pathMatch: "full"
   },
   {
     path: "users", 
@@ -12,6 +12,9 @@ const routes: Routes = [
   { 
     path: 'resume', 
     loadChildren: () => import('./modules/resume-builder/resume-builder.module').then(m => m.ResumeBuilderModule) 
+  },
+  { 
+    path: 'user', loadChildren: () => import('./assessment-1/user/user.module').then(m => m.UserModule) 
   }
 ];
 

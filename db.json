@@ -99,5 +99,71 @@
         }
       ]
     }
+  ],
+  "user": [
+    {
+      "firstname": "Aman",
+      "lastname": "Patel",
+      "email": "aman@mail",
+      "clientname": "1",
+      "officename": "2",
+      "phone": 7894561230,
+      "id": 1
+    },
+    {
+      "firstname": "Ankit",
+      "lastname": "Patel",
+      "email": "ankit@mail.com",
+      "clientname": "2",
+      "officename": "2",
+      "phone": 789456130,
+      "id": 2
+    },
+    {
+      "firstname": "Abhi",
+      "lastname": "Patel",
+      "email": "abhi@mail.com",
+      "clientname": "1",
+      "officename": "2",
+      "phone": 7894561230,
+      "id": 3
+    },
+    {
+      "firstname": "Rahul",
+      "lastname": "Patel",
+      "email": "rahul@mail.com",
+      "clientname": "2",
+      "officename": "1",
+      "phone": 7894561230,
+      "id": 4
+    }
+  ],
+  "clientname": [
+    {
+      "id": 1,
+      "clientname": "Apple"
+    },
+    {
+      "id": 2,
+      "clientname": "Samsung"
+    },
+    {
+      "id": 3,
+      "clientname": "1Rivet"
+    }
+  ],
+  "officename": [
+    {
+      "id": 1,
+      "officename": "Office 1"
+    },
+    {
+      "id": 2,
+      "officename": "Office 2"
+    },
+    {
+      "id": 3,
+      "officename": "Office 3"
+    }
   ]
 }
