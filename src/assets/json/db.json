@@ -1,0 +1,169 @@
+{
+  "department": [
+    {
+      "id": 1,
+      "deptname": "Frontend"
+    },
+    {
+      "id": 2,
+      "deptname": ".Net"
+    },
+    {
+      "id": 3,
+      "deptname": "QA"
+    },
+    {
+      "id": 4,
+      "deptname": "Mobile"
+    }
+  ],
+  "userdata": [
+    {
+      "id": 2,
+      "firstname": "Ankit",
+      "lastname": "Patel",
+      "email": "abhi@mail.com",
+      "phone": "54844879876",
+      "gender": "male",
+      "date": "2022-02-04",
+      "department": 2
+    },
+    {
+      "id": 3,
+      "firstname": "Abhi ",
+      "lastname": "Patel",
+      "email": "abhi@gmail.com",
+      "phone": "879766787",
+      "gender": "male",
+      "date": "2021-12-16",
+      "department": 4
+    },
+    {
+      "id": 4,
+      "firstname": "Aman",
+      "lastname": "Patel",
+      "email": "aman@mail.com",
+      "phone": 578974778,
+      "gender": "male",
+      "date": "2022-02-11",
+      "department": "3"
+    },
+    {
+      "id": 5,
+      "firstname": "Harsh",
+      "lastname": "Patel",
+      "email": "harsh@gmail.com",
+      "phone": 15464648454878,
+      "gender": "male",
+      "date": "2022-02-03",
+      "department": "2"
+    },
+    {
+      "id": 6,
+      "firstname": "Harsh",
+      "lastname": "Singh",
+      "email": "harsh@mail.com",
+      "phone": 6898764849,
+      "gender": "male",
+      "date": "2022-02-04",
+      "department": "4"
+    }
+  ],
+  "resumedata": [
+    {
+      "id": 1,
+      "name": "Manish Patel",
+      "post": "Intern",
+      "phone": 7894561230,
+      "email": "manish@mail.com",
+      "skill": [
+        {
+          "skill": "HTML"
+        },
+        {
+          "skill": "Android"
+        }
+      ],
+      "experience": [
+        {
+          "exp": "EzDataMuch",
+          "post": "Intern",
+          "year": "2020-2021"
+        }
+      ],
+      "education": [
+        {
+          "education": "GTU",
+          "major": "BE",
+          "gpa": 9
+        }
+      ]
+    }
+  ],
+  "user": [
+    {
+      "firstname": "Aman",
+      "lastname": "Patel",
+      "email": "aman@mail",
+      "clientname": "1",
+      "officename": "2",
+      "phone": 7894561230,
+      "id": 1
+    },
+    {
+      "firstname": "Ankit",
+      "lastname": "Patel",
+      "email": "ankit@mail.com",
+      "clientname": "2",
+      "officename": "2",
+      "phone": 789456130,
+      "id": 2
+    },
+    {
+      "firstname": "Abhi",
+      "lastname": "Patel",
+      "email": "abhi@mail.com",
+      "clientname": "1",
+      "officename": "2",
+      "phone": 7894561230,
+      "id": 3
+    },
+    {
+      "firstname": "Rahul",
+      "lastname": "Patel",
+      "email": "rahul@mail.com",
+      "clientname": "2",
+      "officename": "1",
+      "phone": 7894561230,
+      "id": 4
+    }
+  ],
+  "clientname": [
+    {
+      "id": 1,
+      "clientname": "Apple"
+    },
+    {
+      "id": 2,
+      "clientname": "Samsung"
+    },
+    {
+      "id": 3,
+      "clientname": "1Rivet"
+    }
+  ],
+  "officename": [
+    {
+      "id": 1,
+      "officename": "Office 1"
+    },
+    {
+      "id": 2,
+      "officename": "Office 2"
+    },
+    {
+      "id": 3,
+      "officename": "Office 3"
+    }
+  ]
+}
