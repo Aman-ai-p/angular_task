@@ -101,8 +101,12 @@ export class UserlistComponent implements OnInit {
   }
 
   // reset form
-  resetform(){
+  private resetform(){
     this.userform.reset();
+  }
+
+  public cancel(){
+    this.showform = false;
   }
 
 }
