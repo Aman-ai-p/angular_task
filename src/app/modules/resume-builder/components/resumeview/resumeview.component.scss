@@ -1,6 +1,3 @@
-:host{
-    width: 100%;
-}
 
 .d-flex{
     display: flex;
@@ -16,7 +13,6 @@
 
 .wrapper{
     height: 100%;
-    background-color: #ADE8F4;
 }
 
 .button button{
@@ -27,10 +23,8 @@
     font-size: 1.2rem;
     color: black;
     border-radius: 12px;
-    font-weight: 700;
 }
 
 .button button:hover{
-    background-color: #CAF0F8;
-    color: white;
+    background-color: #ebedfb;
 }

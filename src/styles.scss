@@ -29,7 +29,7 @@ html,body{
 
 .wrapper{
     height: 100%;
-    width: 100%;
+    // border: 1px solid black;
 }
 
 .aside{
@@ -39,5 +39,7 @@ html,body{
 
 .outlet{
     background-color: #f7f8fa;
+    overflow: auto;
+    padding: 40px 40px;
     // border: 10px solid red;
 }

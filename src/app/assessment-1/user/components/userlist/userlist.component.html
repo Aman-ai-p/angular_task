@@ -1,4 +1,4 @@
-<section class="wrapper d-flex flex-column">
+<section class="wrapper">
 
     <!-- header start -->
     <header class="d-flex">
@@ -28,16 +28,16 @@
                     <div class="input-tag d-flex flex-grow">
 
                         <input formControlName="firstname" type="text" name="firstname" id="firstname" placeholder="First name">
-                        <span *ngIf="formValidate['firstname'].touched && formValidate['firstname'].invalid">dvdv</span>
+                        <span *ngIf="formValidate['firstname'].touched && formValidate['firstname'].invalid"></span>
 
                         <input formControlName="lastname" type="text" name="lastname" id="lastname" placeholder="Last Name">
-                        <span *ngIf="formValidate['lastname'].touched && formValidate['lastname'].invalid">vrsdc</span>
+                        <span *ngIf="formValidate['lastname'].touched && formValidate['lastname'].invalid"></span>
 
                         <input formControlName="email" type="email" name="email" id="email" placeholder="Email">
                         <small class="required" *ngIf="formValidate['email'].touched && formValidate['email'].invalid">Enter a valid @domain.com</small>
 
                         <input formControlName="phone" type="number" name="phone" id="phone" placeholder="Conact number">
-                        <span *ngIf="formValidate['phone'].touched && formValidate['phone'].invalid">frf</span>
+                        <span *ngIf="formValidate['phone'].touched && formValidate['phone'].invalid"></span>
 
                     </div>
                     <div class="select-tag d-flex justify-content-center">
@@ -70,7 +70,7 @@
                     <th>Action</th>
                 </tr>
         
-                <tr *ngFor="let user of userdata let i = index">
+                <tr *ngFor="let user of userdata; let i = index">
                     <td>{{user.firstname}}</td>
                     <td>{{user.lastname}}</td>
                     <td>{{user.clientname | getClient:client}}</td>
@@ -79,6 +79,10 @@
                     <td>{{user.phone}}</td>
                     <td><button (click)="edit(user.id)" >Edit</button><button (click)="deleteUserdata(user.id)">Delete</button></td>
                 </tr>
+
+                <div *ngIf="userdata.length == 0">
+                    <h1>no result</h1>
+                </div>
 
             </table>
         </section>
