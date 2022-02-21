@@ -1,28 +1,9 @@
-// Flex Properties
-.d-flex{
-    display: flex;
-}
-
-.flex-column{
-    flex-direction: column;
-}
-
-.justify-content-center{
-    justify-content: center;
-}
-
-.align-items-center{
-    align-items: center;
-}
-
-.flex-grow{
-    flex-grow: 1;
-}
 
 // Sidebar
 .asidebar{
-    width: 100%;
+    width: 250px;
     height: 100%;
+    transition: 0.4s all;
     background-color: #fff;
     border-right: 1px solid rgb(206, 206, 206);
 }
@@ -32,13 +13,19 @@
     background-color: #ffffff;
     border-bottom: 1px solid rgb(206, 206, 206);
     flex-shrink: 0;
+
+    .brand-logo{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     img{
         width: 50px;
-   }
-
-   h1{
+    }
+    h1{
         color:#365ccb
-   }
+    }
 }
 
 // Nav list
@@ -111,6 +98,55 @@
                 background-color: #ebedfb;
                 color: #5b6ca3;
             }
+        }
+    }
+}
+
+
+// Toggele sidebar
+#side-menu{
+    display: none;
+}
+
+.close-menu{
+    font-size: 1.5rem;
+    color: #4a94d8;
+}
+
+.ham-menu{
+    display: none;
+}
+
+#side-menu:checked ~ .asidebar {
+    width: 80px;
+    transition: 0.4s all;
+
+    .close-menu{
+        display: none;
+        transition: 0.4s all;
+    }
+
+    .ham-menu{
+        display: block;
+    }
+
+    .hide{
+        display: none;
+    }
+
+    .nav-list{
+        a{
+            padding: 0;
+            justify-content: center;
+        }
+    }
+    img{
+        display: none;
+    }
+    .ham-menu{
+        i{
+            font-size: 1.5rem;
+            color: #4a94d8;
         }
     }
 }

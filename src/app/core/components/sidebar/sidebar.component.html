@@ -1,9 +1,18 @@
+<input type="checkbox" name="side-menu" id="side-menu" checked>
 <aside class="asidebar d-flex flex-column">
 
     <!-- Brand logo -->
     <header class="header d-flex justify-content-center align-items-center">
-       <i><img src="../../../../assets/images/bxl-angular.svg" alt=""></i>
-       <h1>TASK</h1>
+        <div>
+            <label for="side-menu" class="close-menu"><i class='bx bx-chevrons-left'></i></label>
+        </div>
+        <div class="brand-logo">
+            <label for="side-menu" class="ham-menu"><i class='bx bx-menu'></i></label>
+            <figure>
+                <img src="../../../../assets/images/bxl-angular.svg" alt="Brand-logo">
+            </figure>
+            <h1 class="hide">TASK</h1>
+        </div>
     </header>
     
     <!-- Nav list -->
@@ -11,15 +20,15 @@
         <ul class="d-flex flex-column">
             <li class="nav-list d-flex justify-content-center align-items-center"><a class="d-flex align-items-center" routerLink="users" routerLinkActive="active">
                 <i class='bx bxs-user-detail'></i>
-                <span>User</span></a>
+                <span class="hide">User</span></a>
             </li>
             <li class="nav-list d-flex justify-content-center align-items-center"><a class="d-flex align-items-center" routerLink="resume" routerLinkActive="active">
                 <i class='bx bx-notepad'></i>
-                <span>Resume Builder</span></a>
+                <span class="hide">Resume Builder</span></a>
             </li>
             <li class="nav-list d-flex justify-content-center align-items-center"><a class="d-flex align-items-center" routerLink="user" routerLinkActive="active">
                 <i class='bx bx-notepad'></i>
-                <span>User (Assessment-1)</span></a>
+                <span class="hide">User (Assessment-1)</span></a>
             </li>
         </ul>
     </nav>
@@ -28,7 +37,7 @@
         <div class="log-out d-flex flex-grow">
             <a class="d-flex flex-grow align-items-center justify-content-center" routerLinkActive="active">
             <i class='bx bx-log-out'></i>
-            <h1>Log Out</h1></a>
+            <h1 class="hide">Log Out</h1></a>
         </div>
     </footer>
     

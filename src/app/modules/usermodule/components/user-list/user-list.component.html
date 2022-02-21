@@ -1,16 +1,18 @@
-<header>
+<header class="header">
     <h1>User</h1>
 </header>
 
 <main class="container d-flex flex-grow justify-content-between flex-column">
-    <div class="d-flex">
-        <input class="search" type="text" placeholder="Search" [(ngModel)]="search">
-    </div>
-    <div class="d-flex"> 
-        <button class="btn" routerLink="/users/userform">Add User</button>
-    </div> 
-    
-    <div id="table-product">
+    <section class="d-flex justify-content-between">
+        <div class="search">
+            <input  type="text" placeholder="Search" [(ngModel)]="search">
+        </div>
+        <div> 
+            <button class="btn" routerLink="/users/userform">Add User</button>
+        </div> 
+    </section>
+
+    <div id="table-product" class="container">
         <table class="table-product">
             <tr>
                 <th>Name</th>
