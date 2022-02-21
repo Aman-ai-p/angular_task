@@ -1,26 +1,3 @@
-
-.d-flex{
-    display: flex;
-}
-
-
-// flex-property
-.flex-column{
-    flex-direction: column;
-}
-
-.justify-content-center{
-    justify-content: center;
-}
-
-.justify-content-between{
-    justify-content: space-between;
-}
-
-.justify-content-end{
-    justify-content: end;
-}
-
 .bg-color{
     background-color: #2f6bff;
 }
@@ -28,7 +5,11 @@
 // Header
 .head-title{
     width: 80%;
+    h1{
+        font-weight: 500;
+    }
 }
+
 
 .head-form{
     label{
@@ -98,25 +79,25 @@
     background-color: #171f46;
 }
 
-// Table
-.table-product {
-    border-collapse: collapse;
+// Listing Table
+.table-product{
     width: 100%;
-}
+    text-align: center;
+    border-collapse: collapse;
+    border-radius: 10px;
+    background-color: white;
 
-.table-product th {
-    padding: 10px 10px;
-    text-align: left;
-    background-color: #e6e7eb;
-    color: black;
-}
+    th{
+        padding: 15px 0;
+        color: #b7b8ba;
+        font-weight: 400;
+        border-bottom: 1px solid rgb(235, 234, 234);
+    }
 
-.table-product td{
-    padding: 5px 10px;
-}
-
-input.ng-touched.ng-invalid{
-    border-color: red;
+    td{
+        padding: 15px 0;
+        border-bottom: 1px solid rgb(235, 234, 234);
+    }
 }
 
 

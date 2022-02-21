@@ -8,13 +8,14 @@
             <input  type="text" placeholder="Search" [(ngModel)]="search">
         </div>
         <div> 
-            <button class="btn" routerLink="/users/userform">Add User</button>
+            <button class="btn" routerLink="/users/userform">+Add new User</button>
         </div> 
     </section>
 
-    <div id="table-product" class="container">
+    <div id="table-product" class="container table-container">
         <table class="table-product">
             <tr>
+                <th>#</th>
                 <th>Name</th>
                 <th>E-mail</th>
                 <th>Gender</th>
@@ -24,6 +25,7 @@
             </tr>
     
             <tr *ngFor="let user of userdata | searchText:search">
+                <td>{{user.id}}</td>
                 <td>{{user.firstname + ' ' + user.lastname}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.gender}}</td>
