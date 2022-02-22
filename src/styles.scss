@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "./assets/scss/component/buttons";
+@import "./assets/scss/base/global";
+
 *{
     margin: 0;
     padding: 0;
@@ -14,6 +18,7 @@ body{
     overflow: hidden;
 }
 
+// flex styles goes here
 .d-flex{
     display: flex;
 }
@@ -46,8 +51,16 @@ body{
     justify-content: end;
 }
 
+// wrapper
 .wrapper{
     height: 100%;
+    position: relative;
+
+    .sidebar{
+        width: 250px;
+        height: 100%;
+        transition: 0.4s all;
+    }
 }
 
 .outlet{
@@ -56,3 +69,97 @@ body{
     padding: 40px 40px;
 }
 
+// Button styles 
+.btn{
+    border: none;
+    text-align: center;
+    margin: 0 10px;
+    padding: 15px 0;
+    width: 140px;
+    color: white;
+    background-color: #2f6bff;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+// sidebar toggle
+#menu{
+    display: none;
+}
+
+.bar{
+    position: absolute;
+    z-index: 2;
+}
+
+#menu:checked ~.sidebar{
+    width: 80px;
+    transition: 0.4s all;
+
+    .link-name{
+        display: none;
+    }
+
+    .nav-list{
+        a{
+            padding: 0;
+            justify-content: center;
+        }
+    }
+    img{
+        display: none
+    };
+    .ham-menu{
+        i{
+            font-size: 1.5rem;
+            color: #4a94d8;
+        }
+    }
+               
+}
+
+// Responsive Tablet
+@media screen and (max-width:768px) {
+
+    .sidebar{
+        position: absolute;
+        width: 100%;
+        left: -400px;
+    }    
+
+    #menu:checked ~.sidebar{
+        width: 60%;
+        left: 0;
+        z-index: 1;
+        .outlet{
+            opacity: 0.9;
+        }
+
+       figure{
+           img{
+               display: block
+           };
+       }
+
+        .nav-list{
+           a{
+               justify-content: flex-start;
+            } 
+        }
+
+        .link-name{
+            display: block;
+        }
+
+    }
+    
+}
+
+// Responsive mobile
+@media  screen and (max-width: 567px) {
+
+    #menu:checked ~.sidebar{
+        width: 100%;
+    }
+    
+}

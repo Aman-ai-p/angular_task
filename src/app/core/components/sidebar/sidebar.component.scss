@@ -1,9 +1,7 @@
 
 // Sidebar
 .asidebar{
-    width: 250px;
     height: 100%;
-    transition: 0.4s all;
     background-color: #ffffff;
     border-right: 1px solid rgb(206, 206, 206);
 }
@@ -19,14 +17,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        // position: absolute;
     }
-
-    // .close-menu{
-    //     position: relative;
-    //     left: 110px;
-    //     top: -20px;
-    // }
 
     img{
         width: 50px;
@@ -41,7 +32,8 @@
 .nav{
     padding: 40px 0;
     flex-grow: 1;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     ul{
         padding: 0 10px;
@@ -127,62 +119,5 @@
         }
     }
 }
-
-.profile{
-    width: 50%;
-    height: 50%;
-    background-color: black;
-}
-
-
-// Toggele sidebar
-#side-menu{
-    display: none;
-}
-
-.close-menu{
-    font-size: 1.5rem;
-    color: #4a94d8;
-}
-
-.ham-menu{
-    display: none;
-}
-
-#side-menu:checked ~ .asidebar {
-    width: 80px;
-    transition: 0.4s all;
-
-    .close-menu{
-        display: none;
-        transition: 0.4s all;
-    }
-
-    .ham-menu{
-        display: block;
-    }
-
-    .link-name{
-        display: none;
-    }
-
-    .nav-list{
-        a{
-            
-            padding: 0;
-            justify-content: center;
-        }
-    }
-    img{
-        display: none;
-    }
-    .ham-menu{
-        i{
-            font-size: 1.5rem;
-            color: #4a94d8;
-        }
-    }
-}
-
 
 
