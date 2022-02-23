@@ -8,7 +8,7 @@
         <div>
             <form class="head-form d-flex flex-grow justify-content-end">
                 <label for="client">Client:</label>
-                <select name="client" id="client">
+                <select name="client" id="client" class="client-select">
                     <option *ngFor="let cname of client" [value]="cname.id">{{cname.clientname}}</option>
                 </select>
                 <i class='bx bx-search-alt-2'></i>

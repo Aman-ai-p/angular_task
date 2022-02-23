@@ -1,10 +1,10 @@
-<section class="">
+<section class="resume-form">
 
-    <main class="main d-flex justify-center flex-grow">
+    <main class="main d-flex justify-content-center flex-grow">
         <form class="form-wrapper justify-center" [formGroup]="createform" (ngSubmit)="submitToDB()">
     
             <!-- name -->
-            <div class="container d-flex flex-col">
+            <div class="container d-flex flex-column">
                 <div class="label">
                     <label for="name"><h2>Name</h2></label>
                 </div>
@@ -15,7 +15,7 @@
             </div>
 
             <!-- Post -->
-            <div class="container d-flex flex-col">
+            <div class="container d-flex flex-column">
                 <div class="label">
                     <label for="post"><h2>Your Post</h2></label>
                 </div>
@@ -26,7 +26,7 @@
             </div>
 
             <!-- Email -->
-            <div class="container d-flex flex-col">
+            <div class="container d-flex flex-column">
                 <div class="label">
                     <label for="email"><h2>Email</h2></label>
                 </div>
@@ -37,7 +37,7 @@
             </div>
             
             <!-- Phone -->
-            <div class="container d-flex flex-col">
+            <div class="container d-flex flex-column">
                 <div class="label">
                     <label for="phone"><h2>Phone</h2></label>
                 </div>
@@ -48,13 +48,13 @@
             </div>
 
             <!-- Skills -->
-             <div class="container d-flex flex-col">
+             <div class="container d-flex flex-column">
                 <div class="label">
                     <label for="skill"><h2>Techincal Skill</h2></label>
                 </div>
                 <div class="input" formArrayName="skill" *ngFor="let skill of techSkill.controls ; let i = index">
-                    <div [formGroupName]="i" class="array-div">
-                        <div>
+                    <div [formGroupName]="i" class="array-div flex-wrap">
+                        <div class="w-100">
                             <input type="text" placeholder="Enter Techincal skills.." formControlName="skill">
                             <small class="validation" *ngIf="f['skill'].touched && f['skill'].invalid">*This field is required</small>
                         </div>
@@ -69,7 +69,7 @@
             </div>
             
             <!-- Experience -->
-           <div class="container d-flex flex-col">
+           <div class="container d-flex flex-column">
                 <div class="label">
                     <label for="experience"><h2>Experience</h2></label>
                 </div>
@@ -100,7 +100,7 @@
             </div>
             
             <!-- Education -->
-            <div class="container d-flex flex-col">
+            <div class="container d-flex flex-column">
                 <div class="label">
                     <label for="education"><h2>Education</h2></label>
                 </div>
@@ -131,7 +131,7 @@
             </div>
 
             <!-- Submit Button -->
-            <div class="container d-flex flex-col">
+            <div class="container d-flex flex-column">
                 <div class="add-btn">
                     <button class="btn" type="submit" value="submit" [disabled]="createform.invalid">Submit</button>
                     <div class="del-btn">

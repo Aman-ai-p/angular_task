@@ -1,21 +1,4 @@
 
-/* Flex Property */
-.d.flex{
-    display: flex;
-}
-
-.flex-col{
-    flex-direction: column;
-}
-
-.justify-center{
-    justify-content: center;
-}
-
-.flex-grow{
-    flex-grow: 1;
-}
-
 input[type=submit]:disabled{
     background-color: transparent;
 }

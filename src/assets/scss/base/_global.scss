@@ -1,0 +1,36 @@
+// flex styles goes here
+.d-flex{
+    display: flex;
+}
+
+.flex-grow{
+    flex-grow: 1;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+.justify-content-between{
+    justify-content: space-between;
+}
+
+.justify-content-center{
+    justify-content:center;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+.align-content-center{
+    align-content: center;
+}
+
+.justify-content-end{
+    justify-content: end;
+}
