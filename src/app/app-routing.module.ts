@@ -15,6 +15,9 @@ const routes: Routes = [
   },
   { 
     path: 'user', loadChildren: () => import('./assessment-1/user/user.module').then(m => m.UserModule) 
+  },
+  { 
+    path: 'staticjs', loadChildren: () => import('./staticjs/staticjs.module').then(m => m.StaticjsModule) 
   }
 ];
 

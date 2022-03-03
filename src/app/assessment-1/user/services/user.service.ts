@@ -31,17 +31,21 @@ export class UserService {
 
   // Get user data
   public getUser(): Observable<Userlist[]> {
-    return this.http.get<Userlist[]>(`${this.apiLink}/user`)
+    return this.http.get<Userlist[]>(`${this.apiLink}/user`);
   }
 
   // delete the data
   public deleteUser(id: number): Observable<Userlist[]>{
-    return this.http.delete<Userlist[]>(`${this.apiLink}/user/${id}`)
+    return this.http.delete<Userlist[]>(`${this.apiLink}/user/${id}`);
   }
 
   // get by id
-  getbyid(id: number):Observable<Userlist[]>{
-    return this.http.get<Userlist[]>(`${this.apiLink}/user/${id}`)
+  public getbyid(id: number):Observable<Userlist[]>{
+    return this.http.get<Userlist[]>(`${this.apiLink}/user/${id}`);
   }
   
+  // Update to db
+  // public updateData(userdata: Userlist):Observable<Userlist[]>{
+  //   return this.http.get<Userlist[]>(`${this.apiLink}/user/${id}`);
+  // }
 }

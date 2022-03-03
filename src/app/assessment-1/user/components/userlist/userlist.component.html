@@ -25,7 +25,7 @@
         <section class="form-container d-flex">
             <form class="form flex-grow" [formGroup]="userform" (ngSubmit)="saveuser()">
                 <div *ngIf="showform">
-                    <div class="input-tag d-flex flex-grow">
+                    <div class="input-tag d-flex flex-grow justify-content-center">
 
                         <input formControlName="firstname" type="text" name="firstname" id="firstname" placeholder="First name">
                         <span *ngIf="formValidate['firstname'].touched && formValidate['firstname'].invalid"></span>
