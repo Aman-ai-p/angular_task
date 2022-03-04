@@ -10,6 +10,8 @@ import { SearchFilter } from './models/search.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserServiceService } from './services/user-service.service';
+import { FormOverlayComponent } from './components/overlay-model/form-overlay.component';
+import {OverlayModule} from '@angular/cdk/overlay';
 
 
 @NgModule({
@@ -17,14 +19,16 @@ import { UserServiceService } from './services/user-service.service';
     UserFormComponent,
     UserListComponent,
     SearchFilter,
-    GetById
+    GetById,
+    FormOverlayComponent
   ],
   imports: [
     CommonModule,
     UsermoduleRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    OverlayModule
   ],
   providers:[
     UserServiceService

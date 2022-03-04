@@ -1,0 +1,63 @@
+
+<div>
+
+  <div class="form">
+  
+    <form [formGroup]="userform" (ngSubmit)="onSubmit()" >
+  
+      <div>
+        <label for="firstname">First Name</label>
+        <input formControlName="firstname" type="text" id="firstname" name="firstname" placeholder="Your name..">
+        <small class="required" *ngIf="!userform.get('firstname')?.valid && userform.get('firstname')?.touched">This Field is required</small>
+      </div>
+  
+      <div>
+        <label for="lastname">Last Name</label>
+        <input formControlName="lastname" type="text" id="lastname" name="lastname" placeholder="Your last name..">
+        <small class="required" *ngIf="!userform.get('lastname')?.valid && userform.get('lastname')?.touched">This Field is required</small>
+      </div>
+  
+      <div>
+        <label for="email">Email</label>
+        <input formControlName="email" type="email" id="email" name="email" placeholder="Your email..">
+        <small class="required" *ngIf="!userform.get('email')?.valid && userform.get('email')?.touched">Enter a valid @domain.com</small>
+      </div>
+  
+      <div>
+        <label for="phone">Phone Number :</label>
+        <input formControlName="phone" type="number" name="phone" id="phone" placeholder="Enter Phone Number..">
+      </div>
+  
+      <div>
+        <label for="gender">Gender:</label>
+        <label  for="male">Male</label>
+        <input formControlName="gender" value="male" type="radio" name="gender" id="male">
+        <label for="female">Female</label>
+        <input formControlName="gender" value="female" type="radio" name="gender" id="female"><br>
+      </div>
+  
+  
+      <div>
+        <label for="date">Date of Joining</label>
+        <input formControlName="date" type="date" name="date" id="date"><br>
+  
+      </div>
+  
+      <div>
+        <label for="dept-select">Choose a Department:</label>
+        <select formControlName="department" name="dept-select" id="dept-select">
+            <option *ngFor="let dept of department" [value]="dept.id">{{dept.deptname}}</option> 
+         </select>
+      </div>
+  
+      <div>
+        <input type="submit" class="btn" value="Submit" [disabled]="userform.invalid">
+        <input type="reset" value="reset">
+        <input type="button" class="btn" value="cancel"   >
+      </div>    
+  
+    </form>
+  </div> 
+</div>
+  
+  

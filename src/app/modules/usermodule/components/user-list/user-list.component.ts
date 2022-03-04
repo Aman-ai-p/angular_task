@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Department, Userlist } from '../../models/user.model';
 import { UserServiceService } from '../../services/user-service.service';
+import { Overlay } from '@angular/cdk/overlay';
+import { FormOverlayComponent } from '../overlay-model/form-overlay.component';
+import { ComponentPortal } from '@angular/cdk/portal';
 
 @Component({
   selector: 'app-user-list',
@@ -13,13 +16,26 @@ export class UserListComponent implements OnInit {
   dept: Department[];
   search:string="";
 
-  constructor(private userService: UserServiceService) { }
+  constructor(private userService: UserServiceService, private overlay: Overlay) { }
 
   ngOnInit(): void {
     this.getuserdata();
     this.getdepartment();
   }
 
+  // create overlay
+  private overlayRef = this.overlay.create({
+    positionStrategy: this.overlay
+    .position().global().centerHorizontally().right()
+  });
+  
+  // Display overlay
+  public displayOverlay() {
+    const component = new ComponentPortal(FormOverlayComponent);
+    const componentRef = this.overlayRef.attach(component);   
+    
+  }
+  
   // Get User Data From DB
   getuserdata(){
     this.userService.displayuserdata().subscribe(result=>{
