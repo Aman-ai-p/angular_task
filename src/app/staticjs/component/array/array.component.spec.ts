@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArrayJSComponent } from './array-js.component';
+import { ArrayComponent } from './array.component';
 
-describe('ArrayJSComponent', () => {
-  let component: ArrayJSComponent;
-  let fixture: ComponentFixture<ArrayJSComponent>;
+describe('ArrayComponent', () => {
+  let component: ArrayComponent;
+  let fixture: ComponentFixture<ArrayComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ArrayJSComponent ]
+      declarations: [ ArrayComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ArrayJSComponent);
+    fixture = TestBed.createComponent(ArrayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
