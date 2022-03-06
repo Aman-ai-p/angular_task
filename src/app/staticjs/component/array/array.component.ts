@@ -73,7 +73,7 @@ export class ArrayComponent implements OnInit {
   // Map method
   public mapMethod(): void{
     this.service.getData().subscribe( result =>
-     console.log("Map Method: ", result.map(data => data.name)) 
+     console.log("Map Method: ", result.map(data => data.city)) 
     )
   }
 
