@@ -15,7 +15,6 @@ export class ArrayComponent implements OnInit {
   }
 
   // Every method
-  // error boolean
   public everyMethod(): void{
     this.service.getData().subscribe(result => 
       console.log("Every Method: ",result.every(data => data.age < 18))
@@ -23,7 +22,6 @@ export class ArrayComponent implements OnInit {
   }
 
   // Filter method 
-  //error empty
   public filterMethod(): void{
     this.service.getData().subscribe( result =>
       console.log("Filter Method: ", result.filter(data =>
@@ -33,7 +31,6 @@ export class ArrayComponent implements OnInit {
   }
 
   // Find method
-  // Error undefined
   public findMethod(): void{
     this.service.getData().subscribe( result =>
       console.log("Find Method: ", result.find(data =>
@@ -43,7 +40,6 @@ export class ArrayComponent implements OnInit {
   }
 
   // ForEach method
-  // error undefined
   public foreachMethod(): void{
     this.service.getData().subscribe( result => 
       result.forEach(function(i){
@@ -56,6 +52,42 @@ export class ArrayComponent implements OnInit {
   public someMethod(): void{
     this.service.getData().subscribe( result =>
       console.log("Item Found: ", result.some(data => data.name === "Aman"))
+    )
+  }
+
+  // Join Method
+  public joinMethod(): void{
+    this.service.getData().subscribe((result) =>{
+      console.log("Join Method: ", result.join("+"))
+    }
+    )
+  }
+
+  // Length Method
+  public lengthMethod(): void{
+    this.service.getData().subscribe( result =>
+      console.log("Length Method: ", result.length) 
+    )
+  }
+
+  // Map method
+  public mapMethod(): void{
+    this.service.getData().subscribe( result =>
+     console.log("Map Method: ", result.map(data => data.name)) 
+    )
+  }
+
+  // Slice method
+  public sliceMethod(): void{
+    this.service.getData().subscribe( result => 
+     console.log("Slice Method: ", result.slice(-3))
+    )
+  }
+
+  // Splice Method
+  public spliceMethod(): void{
+    this.service.getData().subscribe( result =>
+      console.log("Splice Method: ", result.splice(2,3))
     )
   }
 
