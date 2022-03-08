@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Department } from '../../models/user.model';
@@ -11,14 +11,15 @@ import { UserServiceService } from '../../services/user-service.service';
 })
 export class FormOverlayComponent implements OnInit {
 
+  @Output() closeOverlay : EventEmitter<Event>;
   department: Department[];
-
   userform:FormGroup;
   id: number;
   isAddMode: boolean;
 
   constructor(private uf : FormBuilder, private userService: UserServiceService,private router: Router, private route: ActivatedRoute ) { 
-    this.userform = this.adduser()
+    this.userform = this.adduser();
+    this.closeOverlay = new EventEmitter<Event>();
   }
 
   ngOnInit(): void {
@@ -31,7 +32,7 @@ export class FormOverlayComponent implements OnInit {
   }
 
   // UserForm
-  adduser():FormGroup{
+  public adduser():FormGroup{
     return this.uf.group({
       id:[null],
       firstname:['',Validators.required],
@@ -46,7 +47,7 @@ export class FormOverlayComponent implements OnInit {
   }
 
   // Get Department Option
-  getdepartment(){
+  public getdepartment(){
     this.userService.getdepartment().subscribe(result=>{
       this.department = result;
      }, (error) =>{
@@ -55,30 +56,25 @@ export class FormOverlayComponent implements OnInit {
   }
 
   // on submit 
-  onSubmit(){
+  public onSubmit(){
     if(this.isAddMode){
       this.saveUser()
     }else{
-      this.updateUser();
-      
+      this.updateUser();  
     }
   }
 
 
   // To save User Details
-  saveUser(){
+  public saveUser(){
+    debugger
     console.log(this.userform.value);
-    this.userService.getuserdata(this.userform.value).subscribe(
-      {
-        next: ()=>{
-          this.router.navigate(['/users/userlist'])
-        }
-      })
-
+    this.userService.postuserdata(this.userform.value).subscribe()
+    this.closeOverlay.emit();
   }
 
   // update user
-  updateUser(){
+  public updateUser(){
     this.userService.editdata(this.id, this.userform.value).subscribe(() =>{
       this.router.navigate(['/users/userlist']);
     })
@@ -86,8 +82,13 @@ export class FormOverlayComponent implements OnInit {
 
 
   // Reset the Form
-  resetform(){
+  public resetform(){
     this.userform.reset();
+  }
+
+  // Cancel overlay
+  public closeOverlayForm(){
+    this.closeOverlay.emit();
   }
 
 }

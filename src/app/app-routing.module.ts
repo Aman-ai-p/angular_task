@@ -18,6 +18,9 @@ const routes: Routes = [
   },
   { 
     path: 'staticjs', loadChildren: () => import('./staticjs/staticjs.module').then(m => m.StaticjsModule) 
+  },
+  { 
+    path: 'ngtemplate', loadChildren: () => import('./ng-template/ng-template.module').then(m => m.NgTemplateModule) 
   }
 ];
 

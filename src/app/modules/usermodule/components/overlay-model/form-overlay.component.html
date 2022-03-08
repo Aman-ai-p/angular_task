@@ -51,9 +51,9 @@
       </div>
   
       <div>
-        <input type="submit" class="btn" value="Submit" [disabled]="userform.invalid">
-        <input type="reset" value="reset">
-        <input type="button" class="btn" value="cancel"   >
+        <input type="submit" class="btn" value="Submit" [disabled]="userform.invalid" (click)="closeOverlayForm()">
+        <input type="reset" class="btn" value="reset">
+        <input type="button" class="btn" value="cancel" (click)="closeOverlayForm()"  >
       </div>    
   
     </form>

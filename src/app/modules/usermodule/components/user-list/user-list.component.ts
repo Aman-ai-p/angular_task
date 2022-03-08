@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Department, Userlist } from '../../models/user.model';
 import { UserServiceService } from '../../services/user-service.service';
 import { Overlay } from '@angular/cdk/overlay';
 import { FormOverlayComponent } from '../overlay-model/form-overlay.component';
 import { ComponentPortal } from '@angular/cdk/portal';
+
 
 @Component({
   selector: 'app-user-list',
@@ -12,6 +13,7 @@ import { ComponentPortal } from '@angular/cdk/portal';
 })
 export class UserListComponent implements OnInit {
 
+ 
   userdata: Userlist[];
   dept: Department[];
   search:string="";
@@ -33,11 +35,13 @@ export class UserListComponent implements OnInit {
   public displayOverlay() {
     const component = new ComponentPortal(FormOverlayComponent);
     const componentRef = this.overlayRef.attach(component);   
-    
+    componentRef.instance.closeOverlay.subscribe(()=>{
+      this.overlayRef.detach();
+    })
   }
   
   // Get User Data From DB
-  getuserdata(){
+  public getuserdata(){
     this.userService.displayuserdata().subscribe(result=>{
     this.userdata = result;
     }, (error) =>{
@@ -46,7 +50,7 @@ export class UserListComponent implements OnInit {
   }
 
   // To delete
-  ondelete(id:number){
+  public ondelete(id:number){
     this.userService.deletedata(id).subscribe(()=>{
       this.getuserdata();
     }, (error) =>{
@@ -55,11 +59,10 @@ export class UserListComponent implements OnInit {
   }
 
   // get department
-  getdepartment(){
+  public getdepartment(){
     this.userService.getdepartment().subscribe(result=>{
       this.dept = result;
      })
   }
-  
 
 }

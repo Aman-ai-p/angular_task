@@ -10,9 +10,9 @@ import { StaticService } from '../../service/static.service';
 })
 export class ObjectComponent implements OnInit {
 
-  arraylist : {};
+  objectlist : {};
   constructor() { 
-    this.arraylist = {
+    this.objectlist = {
       id : 1,
       name : "Karan",
       city : "Udwada",
@@ -26,17 +26,17 @@ export class ObjectComponent implements OnInit {
 
   // Object.keys
   public keyMethod(): void{
-    console.log(Object.keys(this.arraylist));
+    console.log("Object Keys: ",Object.keys(this.objectlist));
   }
 
   // Object.values
   public valueMethod(): void{
-    console.log(Object.values(this.arraylist));
+    console.log("Object Values: ",Object.values(this.objectlist));
   }
 
   // Object.entries
   public entryMethod(): void{
-    console.log(Object.entries(this.arraylist));
+    console.log("Object Entries: ",Object.entries(this.objectlist));
   }
 
 }

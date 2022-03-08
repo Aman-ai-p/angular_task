@@ -51,7 +51,7 @@ export class ArrayComponent implements OnInit {
   // Some Mehtod
   public someMethod(): void{
     this.service.getData().subscribe( result =>
-      console.log("Item Found: ", result.some(data => data.name === "Aman"))
+      console.log("Some Method: ", result.some(data => data.name === "Aman"))
     )
   }
 

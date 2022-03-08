@@ -21,7 +21,7 @@ export class UserServiceService {
   }
 
   // Save Data To DB
-  getuserdata(userdata: Userlist):Observable<Userlist>{
+  postuserdata(userdata: Userlist):Observable<Userlist>{
     return this.http.post<Userlist>(`${this.apiLink}/userdata`, userdata)
   }
 
