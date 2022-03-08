@@ -16,32 +16,32 @@ export class UserServiceService {
   }
 
   // Get department
-  getdepartment(): Observable<Department[]> {
+  public getdepartment(): Observable<Department[]> {
     return this.http.get<Department[]>(`${this.apiLink}/department`);
   }
 
   // Save Data To DB
-  postuserdata(userdata: Userlist):Observable<Userlist>{
+  public postuserdata(userdata: Userlist):Observable<Userlist>{
     return this.http.post<Userlist>(`${this.apiLink}/userdata`, userdata)
   }
 
   // Display Data to List
-  displayuserdata(): Observable<Userlist[]>{
+  public displayuserdata(): Observable<Userlist[]>{
     return this.http.get<Userlist[]>(`${this.apiLink}/userdata`)
   }
 
   // To delete Data
-  deletedata(id: number): Observable<Userlist[]>{
+  public deletedata(id: number): Observable<Userlist[]>{
     return this.http.delete<Userlist[]>(`${this.apiLink}/userdata/${id}`)
   }
 
   // get user id to edit
-  getbyid(id: number):Observable<Userlist>{
+  public getbyid(id: number):Observable<Userlist>{
     return this.http.get<Userlist>(`${this.apiLink}/userdata/${id}`)
   }
 
   // to edit
-  editdata(id:number, userdata: Userlist):Observable<Userlist>{
+  public editdata(id:number, userdata: Userlist):Observable<Userlist>{
     return this.http.put<Userlist>(`${this.apiLink}/userdata/${id}`, userdata)
   }
   

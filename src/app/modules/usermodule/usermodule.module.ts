@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserServiceService } from './services/user-service.service';
 import { FormOverlayComponent } from './components/overlay-model/form-overlay.component';
 import {OverlayModule} from '@angular/cdk/overlay';
+import { DeletePopupComponent } from './components/delete-popup/delete-popup.component';
+
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import {OverlayModule} from '@angular/cdk/overlay';
     UserListComponent,
     SearchFilter,
     GetById,
-    FormOverlayComponent
+    FormOverlayComponent,
+    DeletePopupComponent
   ],
   imports: [
     CommonModule,

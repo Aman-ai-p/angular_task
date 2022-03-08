@@ -64,13 +64,11 @@ export class FormOverlayComponent implements OnInit {
     }
   }
 
-
   // To save User Details
   public saveUser(){
-    debugger
     console.log(this.userform.value);
     this.userService.postuserdata(this.userform.value).subscribe()
-    this.closeOverlay.emit();
+    this.closeOverlayForm();
   }
 
   // update user

@@ -1,9 +1,11 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Department, Userlist } from '../../models/user.model';
 import { UserServiceService } from '../../services/user-service.service';
 import { Overlay } from '@angular/cdk/overlay';
 import { FormOverlayComponent } from '../overlay-model/form-overlay.component';
 import { ComponentPortal } from '@angular/cdk/portal';
+import { DeletePopupComponent } from '../delete-popup/delete-popup.component';
+
 
 
 @Component({
@@ -13,32 +15,51 @@ import { ComponentPortal } from '@angular/cdk/portal';
 })
 export class UserListComponent implements OnInit {
 
- 
   userdata: Userlist[];
   dept: Department[];
   search:string="";
 
-  constructor(private userService: UserServiceService, private overlay: Overlay) { }
+  constructor(private userService: UserServiceService, private overlay: Overlay) { 
+    
+  }
 
   ngOnInit(): void {
     this.getuserdata();
     this.getdepartment();
   }
-
-  // create overlay
-  private overlayRef = this.overlay.create({
-    positionStrategy: this.overlay
-    .position().global().centerHorizontally().right()
-  });
   
   // Display overlay
   public displayOverlay() {
+    const overlayRef = this.overlay.create({
+      positionStrategy: this.overlay.position()
+      .global().centerHorizontally().right()
+    })
     const component = new ComponentPortal(FormOverlayComponent);
-    const componentRef = this.overlayRef.attach(component);   
+    const componentRef = overlayRef.attach(component);   
     componentRef.instance.closeOverlay.subscribe(()=>{
-      this.overlayRef.detach();
+      overlayRef.detach();
     })
   }
+
+  // Delete Popup
+  public delete(id:number){
+   const overlayRef = this.overlay.create({
+     positionStrategy : this.overlay.position()
+     .global().centerHorizontally().centerVertically()
+   })
+   const component = new ComponentPortal(DeletePopupComponent);
+   const componentRef = overlayRef.attach(component);
+   componentRef.instance.DeletePopup.subscribe((value)=>{
+     if(value){
+      this.ondelete(id)
+      overlayRef.detach();
+     }
+     else{
+       overlayRef.detach();
+     }
+   })
+  }
+
   
   // Get User Data From DB
   public getuserdata(){
@@ -65,4 +86,5 @@ export class UserListComponent implements OnInit {
      })
   }
 
+  
 }

@@ -33,10 +33,11 @@
                 <td>{{user.department | getByid:dept }}</td>
                 <td>
                     <button>Edit</button>
-                    <button (click)="ondelete(user.id)">Delete</button>
+                    <button (click)="delete(user.id)">Delete</button>
                 </td>
             </tr>
         </table>
     </div>
 </main>
 
+<!-- ondelete(user.id) -->

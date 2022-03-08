@@ -19,16 +19,6 @@
   ],
   "userdata": [
     {
-      "id": 3,
-      "firstname": "Abhi ",
-      "lastname": "Patel",
-      "email": "abhi@gmail.com",
-      "phone": "879766787",
-      "gender": "male",
-      "date": "2021-12-16",
-      "department": 4
-    },
-    {
       "id": 4,
       "firstname": "Aman",
       "lastname": "Patel",
@@ -47,16 +37,6 @@
       "gender": "male",
       "date": "2022-02-03",
       "department": "2"
-    },
-    {
-      "id": 7,
-      "firstname": "Aman",
-      "lastname": "Patel",
-      "email": "amans@gmail",
-      "phone": 8794648448,
-      "gender": "male",
-      "date": "2022-03-02",
-      "department": "1"
     }
   ],
   "resumedata": [
