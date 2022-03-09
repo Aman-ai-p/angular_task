@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Department } from '../../models/user.model';
@@ -12,23 +12,28 @@ import { UserServiceService } from '../../services/user-service.service';
 export class FormOverlayComponent implements OnInit {
 
   @Output() closeOverlay : EventEmitter<Event>;
+  @Input() editId : number;
   department: Department[];
   userform:FormGroup;
   id: number;
-  isAddMode: boolean;
+  editMode: boolean;
 
   constructor(private uf : FormBuilder, private userService: UserServiceService,private router: Router, private route: ActivatedRoute ) { 
     this.userform = this.adduser();
     this.closeOverlay = new EventEmitter<Event>();
+    this.editId = 0;
+    this.editMode = false;
   }
 
   ngOnInit(): void {
     this.getdepartment();
-    this.id = this.route.snapshot.params['id'];
-    this.isAddMode = !this.id;
-    if (!this.isAddMode) {
-      this.userService.getbyid(this.id).subscribe(x => this.userform.patchValue(x));
-  }
+    // this.id = this.route.snapshot.params['id'];
+    if(this.editId != 0){
+      this.editMode = true;
+    }
+    if (this.editMode) {
+      this.userService.getbyid(this.editId).subscribe(x => this.userform.patchValue(x));
+    }
   }
 
   // UserForm
@@ -57,10 +62,11 @@ export class FormOverlayComponent implements OnInit {
 
   // on submit 
   public onSubmit(){
-    if(this.isAddMode){
-      this.saveUser()
-    }else{
-      this.updateUser();  
+    if(this.editMode){
+      this.updateUser();
+    }
+    else{
+      this.saveUser();
     }
   }
 
@@ -73,8 +79,9 @@ export class FormOverlayComponent implements OnInit {
 
   // update user
   public updateUser(){
-    this.userService.editdata(this.id, this.userform.value).subscribe(() =>{
+    this.userService.editdata(this.editId, this.userform.value).subscribe(() =>{
       this.router.navigate(['/users/userlist']);
+      this.closeOverlayForm();
     })
   }
 

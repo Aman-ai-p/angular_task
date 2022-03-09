@@ -15,6 +15,7 @@ import { DeletePopupComponent } from '../delete-popup/delete-popup.component';
 })
 export class UserListComponent implements OnInit {
 
+  
   userdata: Userlist[];
   dept: Department[];
   search:string="";
@@ -29,15 +30,20 @@ export class UserListComponent implements OnInit {
   }
   
   // Display overlay
-  public displayOverlay() {
+  public displayOverlay(id?:number) {
     const overlayRef = this.overlay.create({
       positionStrategy: this.overlay.position()
       .global().centerHorizontally().right()
     })
     const component = new ComponentPortal(FormOverlayComponent);
     const componentRef = overlayRef.attach(component);   
+    if(id){
+      componentRef.instance.editId = id;
+      console.log(id);
+    }
     componentRef.instance.closeOverlay.subscribe(()=>{
       overlayRef.detach();
+      this.getuserdata();
     })
   }
 

@@ -48,7 +48,7 @@
     </div>
 
     <div>
-      <input type="submit" class="btn" value="Submit" [disabled]="userform.invalid" (click)="saveUser()">
+      <input type="submit" class="btn" value="Submit" [disabled]="userform.invalid" (click)="onSubmit()">
       <input type="reset" class="btn" value="reset">
       <input type="button" class="btn" value="cancel" (click)="closeOverlayForm()" >
     </div>    
