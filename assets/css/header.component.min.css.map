@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,OAAO,AAAA,CACH,OAAO,CAAE,IAAI,CAChB,AAED,AAAA,OAAO,AAAA,CACH,SAAS,CAAE,CAAC,CACf,AAED,AACI,UADM,CACN,EAAE,AAAA,CACE,YAAY,CAAE,IAAI,CAClB,KAAK,CAAE,KAAK,CACZ,SAAS,CAAE,MAAM,CACpB",
-    "sources": [
-        "../../src/app/core/components/header/header.component.scss"
-    ],
-    "names": [],
-    "file": "header.component.min.css"
-}

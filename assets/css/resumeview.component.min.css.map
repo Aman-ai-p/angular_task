@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AACA,AAAA,OAAO,AAAA,CACH,OAAO,CAAE,IAAI,CAChB,AAED,AAAA,eAAe,AAAA,CACX,eAAe,CAAE,MAAM,CAC1B,AAED,AAAA,OAAO,AAAA,CACH,WAAW,CAAE,IAAI,CACpB,AAED,AAAA,QAAQ,AAAA,CACJ,MAAM,CAAE,IAAI,CACf,AAED,AAAA,OAAO,CAAC,MAAM,AAAA,CACV,MAAM,CAAE,OAAO,CACf,OAAO,CAAE,IAAI,CACb,gBAAgB,CAAE,KAAK,CACvB,MAAM,CAAE,IAAI,CACZ,SAAS,CAAE,MAAM,CACjB,KAAK,CAAE,KAAK,CACZ,aAAa,CAAE,IAAI,CACtB,AAED,AAAA,OAAO,CAAC,MAAM,AAAA,MAAM,AAAA,CAChB,gBAAgB,CAAE,OAAO,CAC5B",
-    "sources": [
-        "../../src/app/modules/resume-builder/components/resumeview/resumeview.component.scss"
-    ],
-    "names": [],
-    "file": "resumeview.component.min.css"
-}

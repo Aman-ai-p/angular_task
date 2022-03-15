@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../../src/app/staticjs/component/object/object.component.scss"
-    ],
-    "names": [],
-    "file": "object.component.min.css"
-}

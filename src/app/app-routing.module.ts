@@ -21,6 +21,9 @@ const routes: Routes = [
   },
   { 
     path: 'ngtemplate', loadChildren: () => import('./ng-template/ng-template.module').then(m => m.NgTemplateModule) 
+  },
+  { 
+    path: 'mvp', loadChildren: () => import('./mvpmodule/mvpmodule.module').then(m => m.MvpmoduleModule) 
   }
 ];
 

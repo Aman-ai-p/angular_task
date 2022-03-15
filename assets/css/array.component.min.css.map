@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,UAAU,AAAA,CACN,MAAM,CAAE,aAAa,CACxB",
-    "sources": [
-        "../../src/app/staticjs/component/array/array.component.scss"
-    ],
-    "names": [],
-    "file": "array.component.min.css"
-}
