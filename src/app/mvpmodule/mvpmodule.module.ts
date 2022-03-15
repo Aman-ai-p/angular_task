@@ -7,6 +7,8 @@ import { EmployeeFormContainerComponent } from './employee_form_container/employ
 import { EmployeeListContainerComponent } from './empolyee_list_container/employee-list-container.component';
 import { EmployeeFormPresentationComponent } from './employee_form_container/employee_form_presentation/employee-form-presentation.component';
 import { EmployeeListPresentationComponent } from './empolyee_list_container/employee_list_presentation/employee-list-presentation.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -20,7 +22,10 @@ import { EmployeeListPresentationComponent } from './empolyee_list_container/emp
   ],
   imports: [
     CommonModule,
-    MvpmoduleRoutingModule
+    MvpmoduleRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
   ]
 })
 export class MvpmoduleModule { }

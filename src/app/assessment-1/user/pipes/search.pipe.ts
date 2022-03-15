@@ -6,8 +6,8 @@ import { Clientname } from "../models/user.model";
 })
 
 export class SearchFilter implements PipeTransform{
-    transform(value: string, client: Clientname[]) {
-        
+    transform(_value: string, _client: Clientname[]) {
+       
     }
        
 }

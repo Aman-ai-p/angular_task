@@ -11,7 +11,7 @@ export class SearchFilter implements PipeTransform{
             return userdata;
         }
         return userdata.filter((text:Userlist) =>{
-            return text.firstname.toLowerCase().match(search.toLowerCase())
+            return text.firstname.toLowerCase().includes(search.toLowerCase())
         })
     }
 }
