@@ -9,6 +9,7 @@ import { EmployeeFormPresentationComponent } from './employee_form_container/emp
 import { EmployeeListPresentationComponent } from './empolyee_list_container/employee_list_presentation/employee-list-presentation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MvpService } from './mvp.service';
 
 
 
@@ -26,6 +27,10 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+  ],
+  providers: [
+    MvpService
   ]
+
 })
 export class MvpmoduleModule { }

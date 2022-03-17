@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { EmployeeData } from '../employee.model';
+import { MvpService } from '../mvp.service';
 
 @Component({
   selector: 'app-employee-list-container',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeListContainerComponent implements OnInit {
 
-  constructor() { }
+  public employeeList$ : Observable<EmployeeData[]>
+
+  constructor(
+    private employeeDepartmentService : MvpService
+  ) 
+  { 
+    this.employeeList$ = new Observable();
+  }
 
   ngOnInit(): void {
+    this.employeeList$ = this.employeeDepartmentService.getEmployeeList();
   }
 
 }

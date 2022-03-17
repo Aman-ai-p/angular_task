@@ -2,12 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { EmployeeDept, EmployeeList } from './employee.model';
+import { EmployeeData, EmployeeDepartment,  } from './employee.model';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class MvpService {
 
   apiLink : string;
@@ -16,33 +14,33 @@ export class MvpService {
     this.apiLink = environment.baseURL;
   }
 
-  // Get department
-  public getdepartment(): Observable<EmployeeDept[]> {
-    return this.http.get<EmployeeDept[]>(`${this.apiLink}/department`);
-  }
+  // // Get Employee department
+  // public getDepartment(): Observable<EmployeeDepartment[]> {
+  //   return this.http.get<EmployeeDepartment[]>(`${this.apiLink}/employeeDepartment`);
+  // }
 
-  // Save Data To DB
-  public postuserdata(userdata: EmployeeList):Observable<EmployeeList>{
-    return this.http.post<EmployeeList>(`${this.apiLink}/userdata`, userdata)
-  }
+  // // Save Employee Data To DB
+  // public saveEmployeeData(employeeData: EmployeeData):Observable<EmployeeData>{
+  //   return this.http.post<EmployeeData>(`${this.apiLink}/employee`, employeeData)
+  // }
 
   // Display Data to List
-  public displayuserdata(): Observable<EmployeeList[]>{
-    return this.http.get<EmployeeList[]>(`${this.apiLink}/userdata`)
+  public getEmployeeList(): Observable<EmployeeData[]>{
+    return this.http.get<EmployeeData[]>(`${this.apiLink}/employee`)
   }
 
-  // To delete Data
-  public deletedata(id: number): Observable<EmployeeList[]>{
-    return this.http.delete<EmployeeList[]>(`${this.apiLink}/userdata/${id}`)
-  }
+  // // To delete Data
+  // public deletedata(id: number): Observable<EmployeeList[]>{
+  //   return this.http.delete<EmployeeList[]>(`${this.apiLink}/userdata/${id}`)
+  // }
 
-  // get user id to edit
-  public getbyid(id: number):Observable<EmployeeList>{
-    return this.http.get<EmployeeList>(`${this.apiLink}/userdata/${id}`)
-  }
+  // // get user id to edit
+  // public getbyid(id: number):Observable<EmployeeList>{
+  //   return this.http.get<EmployeeList>(`${this.apiLink}/userdata/${id}`)
+  // }
 
-  // to edit
-  public editdata(id:number, userdata: EmployeeList):Observable<EmployeeList>{
-    return this.http.put<EmployeeList>(`${this.apiLink}/userdata/${id}`, userdata)
-  }
+  // // to edit
+  // public editdata(id:number, userdata: EmployeeList):Observable<EmployeeList>{
+  //   return this.http.put<EmployeeList>(`${this.apiLink}/userdata/${id}`, userdata)
+  // }
 }

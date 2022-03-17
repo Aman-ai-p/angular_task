@@ -1,0 +1,21 @@
+<div id="table-product" class="container list-container">
+      <table class="table-product">
+
+          <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Age</th>
+              <th>Action</th>
+          </tr>
+
+          <tr *ngFor="let item of employee">
+            <td>{{item.firstname}}</td>
+            <td>{{item.lastname}}</td>
+            <td>{{item.age}}</td>
+            <td><button>Edit</button></td>
+          </tr>
+  
+         
+      </table>
+
+</div>

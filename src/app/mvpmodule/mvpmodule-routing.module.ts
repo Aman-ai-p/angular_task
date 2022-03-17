@@ -6,15 +6,20 @@ import { MvpmoduleComponent } from './mvpmodule.component';
 
 const routes: Routes = [
   { 
-    path: '', component: EmployeeListContainerComponent,
+    path: '', component: MvpmoduleComponent,
     children : [
       {
-        path: '',
+        path: 'list',
         component: EmployeeListContainerComponent,
       },
       {
-        path: 'employeeForm',
+        path: 'add',
         component: EmployeeFormContainerComponent
+      },
+      {
+        path: '',
+        pathMatch : 'full',
+        redirectTo : 'list'
       }
     ]
   }

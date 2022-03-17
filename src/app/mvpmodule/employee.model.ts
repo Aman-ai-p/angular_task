@@ -1,17 +1,34 @@
+export class EmployeeData {
 
+    public id : number;
+    public name : string;
+    public age : number;
+    public department : string;
 
-export interface EmployeeDept{
-    id : number,
-    deptname : string
+    constructor(
+        id : number,
+        name : string,
+        age :  number,
+        department : string
+    ){
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.department = department;
+    }
 }
 
-export interface EmployeeList{
-    id : number,
-    firstname : string,
-    lastname : string,
-    email : string,
-    phone : number,
-    gender : RadioNodeList,
-    date : string,
-    department : number
+
+export class EmployeeDepartment{
+
+    public id : number;
+    public department : string;
+
+    constructor(
+        id : number,
+        department : string
+    ){
+        this.id = id;
+        this.department = department;
+    }
 }

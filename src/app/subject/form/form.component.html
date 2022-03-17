@@ -1,0 +1,17 @@
+<section class="form-container d-flex">
+      <form class="form flex-grow" [formGroup]="formData">
+         
+              <div class="input-tag d-flex flex-grow justify-content-center">
+
+                  <input type="text" name="firstname" placeholder="First name" formControlName="firstname">
+                  
+                  <input type="text" name="lastname" placeholder="Last Name" formControlName="lastname">
+                  
+                  <input type="number" name="age" placeholder="Age" formControlName="age">
+                  
+                  <div class="d-flex justify-content-end">
+                        <button class="btn cancel-btn bg-color"  type="submit" (click)="submitData()">Submit</button>
+                  </div>
+            </div>   
+      </form>
+  </section>

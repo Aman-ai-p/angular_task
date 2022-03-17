@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { EmployeeData } from '../../employee.model';
 
 @Component({
   selector: 'app-employee-list-presentation',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee-list-presentation.component.scss']
 })
 export class EmployeeListPresentationComponent implements OnInit {
+
+  @Input() public set employeeList(value : EmployeeData[] | null){
+    console.log(value)
+  }
 
   constructor() { }
 

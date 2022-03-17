@@ -23,6 +23,27 @@ body{
     margin: 1rem 1rem;
 }
 
+// Table
+.table-product{
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    border-radius: 10px;
+    background-color: white;
+
+    th{
+        padding: 15px 0;
+        color: #b7b8ba;
+        font-weight: 400;
+        border-bottom: 1px solid rgb(235, 234, 234);
+    }
+
+    td{
+        padding: 15px 0;
+        border-bottom: 1px solid rgb(235, 234, 234);
+    }
+}
+
 // wrapper
 .wrapper{
     height: 100%;

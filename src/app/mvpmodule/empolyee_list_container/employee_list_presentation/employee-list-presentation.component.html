@@ -3,14 +3,14 @@
     <h1>Employee List</h1>
 </header>
   
-<!-- <main class="container d-flex flex-grow justify-content-between flex-column">
+<main class="container d-flex flex-grow justify-content-between flex-column">
     <section class="head-form d-flex justify-content-between">
-        <div class="search">
+        <!-- <div class="search">
             <input  type="text" placeholder="Search" [(ngModel)]="search">
         </div>
         <div> 
             <button class="btn"  (click)="displayOverlay()">+Add new User</button>
-        </div> 
+        </div>  -->
     </section>
   
     <div id="table-product" class="container list-container">
@@ -18,26 +18,21 @@
             <tr>
                 <th>#</th>
                 <th>Name</th>
-                <th>E-mail</th>
-                <th>Gender</th>
-                <th>Date of Joining</th>
+                <th>Age</th>
                 <th>Department</th>
                 <th>Action</th>
             </tr>
       
-            <tr *ngFor="let user of userdata | searchText:search">
-                <td>{{user.id}}</td>
-                <td>{{user.firstname + ' ' + user.lastname}}</td>
-                <td>{{user.email}}</td>
-                <td>{{user.gender}}</td>
-                <td>{{user.date | date: 'dd/MM/yyyy' }}</td>
-                <td>{{user.department | getByid:dept }}</td>
-                <td>
+            <tr *ngFor="let employee of employeeList">
+                <td>{{employee.name}}</td>
+                <td>{{employee.age}}</td>
+                <td>{{employee.department}}</td>
+                <!-- <td>
                     <button (click)="displayOverlay(user.id)">Edit</button>
                     <button (click)="delete(user.id)">Delete</button>
-                </td>
+                </td> -->
             </tr>
         </table>
     </div>
-</main> -->
+</main> 
   
