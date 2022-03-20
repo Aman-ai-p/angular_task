@@ -8,9 +8,11 @@ import { SubjectData } from './subject.model';
 export class StaticService {
 
   public subject$ : Subject<SubjectData>
+  public editData$ : Subject<SubjectData>
 
   constructor() {
     this.subject$ = new Subject<SubjectData>()
+    this.editData$ = new Subject<SubjectData>()
   }
 
 

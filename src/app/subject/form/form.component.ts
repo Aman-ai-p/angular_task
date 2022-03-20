@@ -18,22 +18,34 @@ export class FormComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.editData();
   }
 
+  // Form Group
   public saveData(): FormGroup{
     return this.fb.group({
-      id: [''],
       firstname: [''],
       lastname : [''],
       age : ['']
     })
   }
 
+  // Submit Data
   public submitData(){
     this.service.subject$.next(this.formData.value);
+    console.log(this.formData.value)
     this.reset();
   }
 
+  // Edit Data
+  public editData(){
+    this.service.editData$.subscribe(res => {
+      this.formData.patchValue(res)
+      console.log(res)
+    })
+  }
+
+  // Reset Form
   public reset(){
     this.formData.reset()
   }

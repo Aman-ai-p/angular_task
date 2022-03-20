@@ -2,20 +2,22 @@
       <table class="table-product">
 
           <tr>
+              <th>#</th>
               <th>First Name</th>
               <th>Last Name</th>
               <th>Age</th>
-              <th>Action</th>
+              <th>Edit</th>
+              <th>Delete</th>
           </tr>
 
-          <tr *ngFor="let item of employee">
+          <tr *ngFor="let item of employee; let i = index">
+            <td>{{i}}</td>
             <td>{{item.firstname}}</td>
             <td>{{item.lastname}}</td>
             <td>{{item.age}}</td>
-            <td><button>Edit</button></td>
+            <td><button (click)="edit(item)">Edit</button></td>
+            <td><button (click)="deleteData(item)">Delete</button></td>
           </tr>
-  
-         
       </table>
 
 </div>

@@ -10,28 +10,33 @@ import { SubjectData } from '../subject.model';
 })
 export class ListComponent implements OnInit {
 
-  employee =[
-    {
-      "firstname": "Aman",
-      "lastname" : "Patel",
-      "age" : 22
-    }
-  ]
-
-  data : SubjectData[];
+  employee : SubjectData[] =[]
 
   constructor(private service : StaticService) { 
-    this.data = []
   }
 
   ngOnInit(): void {
     this.getData();
   }
 
+  // Get Data
   public getData(){
     this.service.subject$.subscribe(res => {
       this.employee.push(res)
+      console.log(this.employee)
     })
+  }
+
+
+  // Delete Data
+  public deleteData(data : SubjectData){
+    
+  }
+
+  // Edit Data
+  public edit(editData : SubjectData){
+    console.log(editData)
+    this.service.editData$.next(editData)
   }
 
 }
