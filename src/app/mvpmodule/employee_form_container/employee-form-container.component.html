@@ -1,1 +1,5 @@
-<p>employee-form-container works!</p>
+<app-employee-form-presentation
+    [employeeData]="employeeData$ | async"
+    (add)="addEmployee($event)"
+>
+</app-employee-form-presentation>

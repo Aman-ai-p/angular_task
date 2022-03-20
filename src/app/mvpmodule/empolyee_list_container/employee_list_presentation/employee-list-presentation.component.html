@@ -5,12 +5,7 @@
   
 <main class="container d-flex flex-grow justify-content-between flex-column">
     <section class="head-form d-flex justify-content-between">
-        <!-- <div class="search">
-            <input  type="text" placeholder="Search" [(ngModel)]="search">
-        </div>
-        <div> 
-            <button class="btn"  (click)="displayOverlay()">+Add new User</button>
-        </div>  -->
+        <button class="btn" routerLink="../add">+ Add</button>
     </section>
   
     <div id="table-product" class="container list-container">
@@ -19,18 +14,19 @@
                 <th>#</th>
                 <th>Name</th>
                 <th>Age</th>
-                <th>Department</th>
+                <!-- <th>Department</th> -->
                 <th>Action</th>
             </tr>
       
             <tr *ngFor="let employee of employeeList">
+                <td>{{employee.id}}</td>
                 <td>{{employee.name}}</td>
                 <td>{{employee.age}}</td>
-                <td>{{employee.department}}</td>
-                <!-- <td>
-                    <button (click)="displayOverlay(user.id)">Edit</button>
-                    <button (click)="delete(user.id)">Delete</button>
-                </td> -->
+                <!-- <td>{{employee.department}}</td> -->
+                <td>
+                    <button>Edit</button>
+                    <button (click)="OnDelete(employee.id)">Delete</button>
+                </td>
             </tr>
         </table>
     </div>

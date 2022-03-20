@@ -1,0 +1,42 @@
+<!-- 
+<div class="list-btn">
+  <button class="btn" routerLink="/users/userlist">User List</button>
+</div>-->
+  
+<div class="form-employee">
+
+  <!-- <form [formGroup]="employeeform"> -->
+
+    <div>
+      <label for="firstname">First Name</label>
+      <input formControlName="firstname" type="text" id="firstname" name="firstname" placeholder="Your name..">
+      <!-- <small class="required" *ngIf="!employeeform.get('firstname')?.valid && employeeform.get('firstname')?.touched">This Field is required</small> -->
+    </div>
+
+    <div>
+      <label for="lastname">Last Name</label>
+      <input formControlName="lastname" type="text" id="lastname" name="lastname" placeholder="Your last name..">
+      <!-- <small class="required" *ngIf="!employeeform.get('lastname')?.valid && employeeform.get('lastname')?.touched">This Field is required</small> -->
+    </div>
+
+    <div>
+        <label for="age">Age</label>
+        <input type="number" formControlName="age" id="age" name="age" placeholder="age">
+    </div>
+
+    <!-- <div>
+      <label for="dept-select">Choose a Department:</label>
+        <select formControlName="department" name="dept-select" id="dept-select">
+          <option *ngFor="let dept of department" [value]="dept.id">{{dept.deptname}}</option> 
+       </select> 
+    </div> -->
+
+    <div>
+      <input type="submit" class="btn" value="Submit" (click)="onSubmit()">
+      <!-- <input type="reset" class="btn" value="reset"> -->
+      <!-- <button class="btn" (click)="closeOverlayForm()"></button> -->
+    </div>    
+
+  <!-- </form> -->
+</div> 
+

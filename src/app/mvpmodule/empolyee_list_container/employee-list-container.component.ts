@@ -13,14 +13,22 @@ export class EmployeeListContainerComponent implements OnInit {
   public employeeList$ : Observable<EmployeeData[]>
 
   constructor(
-    private employeeDepartmentService : MvpService
+    private employeeListService : MvpService
   ) 
   { 
     this.employeeList$ = new Observable();
   }
 
   ngOnInit(): void {
-    this.employeeList$ = this.employeeDepartmentService.getEmployeeList();
+    // get employeeList
+    this.employeeList$ = this.employeeListService.getEmployeeList();
+  }
+
+  // Delete method
+  delete(id: number) {
+    this.employeeListService.deleteEmployee(id).subscribe((res: any) => {
+      console.log(res);
+    });
   }
 
 }

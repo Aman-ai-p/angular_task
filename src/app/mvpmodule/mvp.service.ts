@@ -19,20 +19,20 @@ export class MvpService {
   //   return this.http.get<EmployeeDepartment[]>(`${this.apiLink}/employeeDepartment`);
   // }
 
-  // // Save Employee Data To DB
-  // public saveEmployeeData(employeeData: EmployeeData):Observable<EmployeeData>{
-  //   return this.http.post<EmployeeData>(`${this.apiLink}/employee`, employeeData)
-  // }
+  // Save Employee Data To DB
+  public addEmployee(form: any): any {
+    return this.http.post<any>(`${this.apiLink}/employee`, form)
+  }
 
   // Display Data to List
   public getEmployeeList(): Observable<EmployeeData[]>{
     return this.http.get<EmployeeData[]>(`${this.apiLink}/employee`)
   }
 
-  // // To delete Data
-  // public deletedata(id: number): Observable<EmployeeList[]>{
-  //   return this.http.delete<EmployeeList[]>(`${this.apiLink}/userdata/${id}`)
-  // }
+  // To delete Data
+  public deleteEmployee(id: number): any {
+    return this.http.delete<any>(`${this.apiLink}/employee/${id}`)
+  }
 
   // // get user id to edit
   // public getbyid(id: number):Observable<EmployeeList>{

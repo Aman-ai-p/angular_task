@@ -1,5 +1,6 @@
 <app-employee-list-presentation
       [employeeList] = "employeeList$ | async"
+      (delete) = "delete($event)"
 >
 
 </app-employee-list-presentation>
