@@ -12,6 +12,10 @@ export class ListComponent implements OnInit {
 
   employee : SubjectData[] =[]
 
+  public dataToEdit : SubjectData;
+  public editMode : boolean;
+  public activeId : number;
+
   constructor(private service : StaticService) { 
   }
 
@@ -22,21 +26,30 @@ export class ListComponent implements OnInit {
   // Get Data
   public getData(){
     this.service.subject$.subscribe(res => {
-      this.employee.push(res)
-      console.log(this.employee)
+      if(this.editMode)
+      {
+        this.employee[this.activeId] = res;
+        this.editMode = false;
+      }
+      else{
+        this.employee.push(res);
+      }
     })
   }
 
-
   // Delete Data
-  public deleteData(data : SubjectData){
-    
+  public deleteData(id:number){
+    console.log(this.employee);
+    this.employee.splice(id,1);
+    console.log(this.employee);
   }
 
   // Edit Data
-  public edit(editData : SubjectData){
-    console.log(editData)
-    this.service.editData$.next(editData)
+  public edit(id: number){
+    this.dataToEdit = this.employee[id];
+    this.service.editData$.next(this.dataToEdit)
+    this.activeId = id
+    this.editMode = true;
   }
 
 }

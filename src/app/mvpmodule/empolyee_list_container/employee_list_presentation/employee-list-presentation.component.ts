@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeData } from '../../employee.model';
 import { EmployeeListPresenterService } from '../employee_list_presenter/employee-list-presenter.service';
 
@@ -11,6 +12,7 @@ import { EmployeeListPresenterService } from '../employee_list_presenter/employe
 })
 export class EmployeeListPresentationComponent implements OnInit {
 
+  // Set Data for list
   @Input() public set employeeList(value : EmployeeData[] | null){
     console.log(value);
     if(value){this._employeeList = value;}
@@ -24,7 +26,7 @@ export class EmployeeListPresentationComponent implements OnInit {
 
   private _employeeList! : EmployeeData[]
 
-  constructor( private employeeListPresenter : EmployeeListPresenterService ) { 
+  constructor( private employeeListPresenter : EmployeeListPresenterService, private router: Router ) { 
     this.delete = new EventEmitter();
   }
 
@@ -32,10 +34,17 @@ export class EmployeeListPresentationComponent implements OnInit {
     this.employeeListPresenter.delete$.subscribe((res: number) => {
       this.delete.emit(res);
     })
+    console.log(this.employeeList)
   }
 
+  // Delete
   public OnDelete(id : number){
-    this.employeeListPresenter.onDelete(id)
+    this.employeeListPresenter.onDelete(id);
+  }
+
+  // Edit
+  onEdit(id: number) {
+    this.router.navigateByUrl(`mvp/edit/${id}`);
   }
 
 }

@@ -14,19 +14,14 @@ export class MvpService {
     this.apiLink = environment.baseURL;
   }
 
-  // // Get Employee department
-  // public getDepartment(): Observable<EmployeeDepartment[]> {
-  //   return this.http.get<EmployeeDepartment[]>(`${this.apiLink}/employeeDepartment`);
-  // }
+  // Display Data to List
+  public getEmployeeList(): Observable<EmployeeData[]>{
+    return this.http.get<EmployeeData[]>(`${this.apiLink}/employee`)
+  }
 
   // Save Employee Data To DB
   public addEmployee(form: any): any {
     return this.http.post<any>(`${this.apiLink}/employee`, form)
-  }
-
-  // Display Data to List
-  public getEmployeeList(): Observable<EmployeeData[]>{
-    return this.http.get<EmployeeData[]>(`${this.apiLink}/employee`)
   }
 
   // To delete Data
@@ -34,13 +29,13 @@ export class MvpService {
     return this.http.delete<any>(`${this.apiLink}/employee/${id}`)
   }
 
-  // // get user id to edit
-  // public getbyid(id: number):Observable<EmployeeList>{
-  //   return this.http.get<EmployeeList>(`${this.apiLink}/userdata/${id}`)
-  // }
+  // Edit Data
+  public editEmployee(form: any, id: string): any {
+    return this.http.put<any>(`${this.apiLink}/employee/${id}`, form)
+  }
 
-  // // to edit
-  // public editdata(id:number, userdata: EmployeeList):Observable<EmployeeList>{
-  //   return this.http.put<EmployeeList>(`${this.apiLink}/userdata/${id}`, userdata)
-  // }
+  // Get By id
+  public getEmployeeById(id: string): Observable<EmployeeData> {
+    return this.http.get<EmployeeData>(`${this.apiLink}/employee/${id}`);
+  }
 }

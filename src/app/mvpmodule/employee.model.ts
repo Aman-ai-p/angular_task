@@ -1,18 +1,21 @@
 export class EmployeeData {
 
     public id : number;
-    public name : string;
+    public firstname : string;
+    public lastname : string;
     public age : number;
     public department : string;
 
     constructor(
         id : number,
-        name : string,
+        firstname : string,
+        lastname : string,
         age :  number,
         department : string
     ){
         this.id = id;
-        this.name = name;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.age = age;
         this.department = department;
     }

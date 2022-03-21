@@ -26,12 +26,12 @@ export class EmployeeFormPresenterService {
     })
   }
 
-   onSubmit(employeeForm: FormGroup) {
-    // if (!employeeForm.valid) {
-    //   return
-    // }
-    console.log("working")
+
+  // On Submit
+  onSubmit(employeeForm: FormGroup) {
+    if (!employeeForm.valid) {
+      return
+    }
     this.employeeFormData.next(employeeForm.value);
-    console.log(employeeForm.value)
   }
 }

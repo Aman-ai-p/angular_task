@@ -41,7 +41,6 @@ export class FormComponent implements OnInit {
   public editData(){
     this.service.editData$.subscribe(res => {
       this.formData.patchValue(res)
-      console.log(res)
     })
   }
 

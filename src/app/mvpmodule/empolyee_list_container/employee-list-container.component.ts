@@ -20,7 +20,6 @@ export class EmployeeListContainerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // get employeeList
     this.employeeList$ = this.employeeListService.getEmployeeList();
   }
 

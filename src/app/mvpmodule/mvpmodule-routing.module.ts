@@ -17,6 +17,10 @@ const routes: Routes = [
         component: EmployeeFormContainerComponent
       },
       {
+        path: 'edit/:id',
+        component: EmployeeFormContainerComponent
+      },
+      {
         path: '',
         pathMatch : 'full',
         redirectTo : 'list'

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Location } from '@angular/common';
 import { FormGroup } from '@angular/forms';
 import { EmployeeData, EmployeeForm } from '../../employee.model';
 import { EmployeeFormPresenterService } from '../employee_form_presenter/employee-form-presenter.service';
@@ -12,17 +13,15 @@ import { EmployeeFormPresenterService } from '../employee_form_presenter/employe
 })
 export class EmployeeFormPresentationComponent implements OnInit {
 
+  // Set employeeData
   @Input() public set employeeData(value : EmployeeData | null) {
     console.log(value);
-    // if (value) {
-    //   console.log(value)
-    //   this.formTitle = 'Edit Customer';
-    //   // this.customerForm.controls['age'].disable();
-    //   console.log(this.customerForm)
-
-    //   this.customerForm.patchValue(value);
-    //   this._customerData = value;
-    // }
+    if (value) {
+      console.log(value)
+      this.formTitle = "Edit Employee Data"
+      this.employeeform.patchValue(value);
+      this._employeeData = value;
+    }
   }
 
   public get employeeData() : EmployeeData | null {
@@ -32,30 +31,36 @@ export class EmployeeFormPresentationComponent implements OnInit {
   private _employeeData!: EmployeeData;
 
   @Output() public add: EventEmitter<EmployeeForm>;
+  @Output() public edit: EventEmitter<EmployeeForm>;
 
-  public employeeForm: FormGroup;
+  public employeeform: FormGroup;
+  public formTitle: string;
 
   constructor(
-    private employeeformService : EmployeeFormPresenterService
+    private employeeformService : EmployeeFormPresenterService,
+    private location: Location
   ) {
-    this.employeeForm = this.employeeformService.buildform();
+    this.employeeform = this.employeeformService.buildform();
     this.add = new EventEmitter();
+    this.edit = new EventEmitter();
+    this.formTitle = "ADD Employee Data";
    }
 
   ngOnInit(): void {
     this.employeeformService.employeeFormData$.subscribe((res: EmployeeForm) => {
       this.add.emit(res);
-      // if (this.formTitle === 'Add Customer') {
-      //   this.add.emit(res);
-      // } else {
-      //   this.edit.emit(res);
-      // }
-      // this.formTitle === 'Add Customer' ? this.add.emit(res) : this.edit.emit(res);;
+      this.formTitle === 'Add Customer' ? this.add.emit(res) : this.edit.emit(res);;
     })
   }
 
+  // On Submit Form
   public onSubmit(){
-    this.employeeformService.onSubmit(this.employeeForm)
+    this.employeeformService.onSubmit(this.employeeform)
+  }
+
+  // On cancel
+  onCancel(){
+    this.location.back();
   }
 
 }

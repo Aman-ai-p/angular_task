@@ -1,11 +1,11 @@
-<!-- 
-<div class="list-btn">
-  <button class="btn" routerLink="/users/userlist">User List</button>
-</div>-->
+
+<div>
+  <h1>{{formTitle}}</h1>
+</div>
   
 <div class="form-employee">
 
-  <!-- <form [formGroup]="employeeform"> -->
+  <form [formGroup]="employeeform">
 
     <div>
       <label for="firstname">First Name</label>
@@ -32,11 +32,11 @@
     </div> -->
 
     <div>
-      <input type="submit" class="btn" value="Submit" (click)="onSubmit()">
-      <!-- <input type="reset" class="btn" value="reset"> -->
+      <input type="button" class="btn" value="Submit" (click)="onSubmit()">
+      <input type="button" class="btn" value="cancel" (click)="onCancel()">
       <!-- <button class="btn" (click)="closeOverlayForm()"></button> -->
     </div>    
 
-  <!-- </form> -->
+  </form>
 </div> 
 

@@ -214,28 +214,22 @@
   ],
   "employee": [
     {
-      "id": 1,
-      "name": "Aman",
-      "age": 22,
-      "department": "Frontend"
+      "firstname": "Aman",
+      "lastname": "Patel",
+      "age": 23,
+      "id": 1
     },
     {
-      "id": 3,
-      "name": "Ankit",
+      "firstname": "Ankit",
+      "lastname": "Patel",
       "age": 22,
-      "department": "Frontend"
+      "id": 2
     },
     {
-      "id": 4,
-      "name": "Abhi",
-      "age": 22,
-      "department": "Frontend"
-    },
-    {
-      "id": 2,
-      "name": "Manish",
-      "age": 22,
-      "department": "Mobile"
+      "firstname": "Ankit",
+      "lastname": "Patel",
+      "age": 21,
+      "id": 3
     }
   ],
   "employeeDepartment": [
@@ -252,72 +246,70 @@
       "department": ".Net"
     }
   ],
-
-
-  "jsDepartment":[
-  {
-    "id":1,
-    "department": "Frontend",
-    "employee":[
-      {
-        "id":1,
-        "name": "Aman",
-        "age" : 22,
-        "gender": "male",
-        "hobby":[
-          {
-            "hobby_1": "Cricket",
-            "hobby_2": "Chess",
-            "hobby_3": "Reading"
-          }
-        ]
-      },
-      {
-        "id":2,
-        "name": "Ankit",
-        "age" : 22,
-        "gender": "male",
-        "hobby":[
-          {
-            "hobby_1": "Football",
-            "hobby_2": "Chess",
-            "hobby_3": "Dance"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id":2,
-    "department": "Mobile",
-    "employee":[
-      {
-        "id":1,
-        "name": "Manish",
-        "age" : 22,
-        "gender": "male",
-        "hobby":[
-          {
-            "hobby_1": "Cricket",
-            "hobby_2": "Chess",
-            "hobby_3": "Reading"
-          }
-        ]
-      },
-      {
-        "id":2,
-        "name": "Ankit",
-        "age" : 22,
-        "gender": "male",
-        "hobby":[
-          {
-            "hobby_1": "Football",
-            "hobby_2": "Chess",
-            "hobby_3": "Dance"
-          }
-        ]
-      }
-    ]
-  }
+  "jsDepartment": [
+    {
+      "id": 1,
+      "department": "Frontend",
+      "employee": [
+        {
+          "id": 1,
+          "name": "Aman",
+          "age": 22,
+          "gender": "male",
+          "hobby": [
+            {
+              "hobby_1": "Cricket",
+              "hobby_2": "Chess",
+              "hobby_3": "Reading"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Ankit",
+          "age": 22,
+          "gender": "male",
+          "hobby": [
+            {
+              "hobby_1": "Football",
+              "hobby_2": "Chess",
+              "hobby_3": "Dance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "department": "Mobile",
+      "employee": [
+        {
+          "id": 1,
+          "name": "Manish",
+          "age": 22,
+          "gender": "male",
+          "hobby": [
+            {
+              "hobby_1": "Cricket",
+              "hobby_2": "Chess",
+              "hobby_3": "Reading"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Ankit",
+          "age": 22,
+          "gender": "male",
+          "hobby": [
+            {
+              "hobby_1": "Football",
+              "hobby_2": "Chess",
+              "hobby_3": "Dance"
+            }
+          ]
+        }
+      ]
+    }
   ]
 }
