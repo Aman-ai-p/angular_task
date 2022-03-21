@@ -1,14 +1,24 @@
-<div *ngFor="let data of empData" style="border: 1px solid black">
-    <p>{{data.id}}</p>
-    <p>{{data.department}}</p>
-    <div *ngFor="let emp of data.employee">
-        <p>{{emp.name}}</p>
-        <p>{{emp.age}}</p>
-        <p>{{emp.gender}}</p>
-        <div *ngFor="let hobby of emp.hobby">
-            <p>{{hobby.hobby_1}}</p>
-            <p>{{hobby.hobby_2}}</p>
-            <p>{{hobby.hobby_3}}</p>
+<div class="card d-flex  m-4" *ngFor="let data of empData">
+    <div class="card-body">
+        {{data.id}}
+        {{data.department}}
+    </div>
+
+    <div class="card-title d-flex flex-column m-3 bg-secondary p-4 text-muted"
+        *ngFor="let emp of data.employee"
+    >
+        <div class="">
+            <p>Name : {{emp.name}}</p> 
+            <p>Age : {{emp.age}}</p>
         </div>
+
+        <div class="card-subtitle d-flex"
+            *ngFor="let hobby of emp.hobby"
+        >
+        {{hobby.hobby_1}}
+        {{hobby.hobby_2}}
+        {{hobby.hobby_3}}
+        
+    </div>
     </div>
 </div>

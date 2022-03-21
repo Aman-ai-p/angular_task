@@ -11,8 +11,8 @@ export class StaticService {
   public editData$ : Subject<SubjectData>
 
   constructor() {
-    this.subject$ = new Subject<SubjectData>()
-    this.editData$ = new Subject<SubjectData>()
+    this.subject$ = new Subject<SubjectData>();
+    this.editData$ = new Subject<SubjectData>();
   }
 
 

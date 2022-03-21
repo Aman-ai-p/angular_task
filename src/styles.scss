@@ -1,16 +1,12 @@
 // Bootstrap files
-// @import '~/src/app/assets/scss/base/index';
-// @import '~/src/app/assets/scss/vendor/index';
-// @import '~/src/app/assets/scss/component/index';
-// @import '~/src/app/assets/scss/layout/index';
-// @import '~/src/app/assets/scss/utilities/index';
+@import '~/src/assets/scss/base/index';
+@import '~/src/assets/scss/vendor/index';
+@import '~/src/assets/scss/component/index';
+@import '~/src/assets/scss/layout/index';
+@import '~/src/assets/scss/utilities/index';
 
 
-/* You can add global styles to this file, and also import other style files */
 
-
-@import "./assets/scss/component/buttons";
-@import "./assets/scss/base/global";
 @import '@angular/cdk/overlay-prebuilt.css';
 
 *{
@@ -71,48 +67,6 @@ body{
     padding: 40px 40px;
 }
 
-// Button styles 
-
-
-// sidebar toggle
-#menu{
-    display: none;
-}
-
-// ham-menu bar
-.bar{
-    position: absolute;
-    z-index: 2;
-    top: 24px;
-    left: 24px;
-    font-size: 1.65rem;
-}
-
-#menu:checked ~.sidebar{
-    width: 80px;
-    transition: 0.4s all;
-
-    .link-name{
-        display: none;
-    }
-
-    .nav-list{
-        a{
-            padding: 0;
-            justify-content: center;
-        }
-    }
-    img{
-        display: none
-    };
-    .ham-menu{
-        i{
-            font-size: 1.5rem;
-            color: #4a94d8;
-        }
-    }
-               
-}
 
 // Responsive Tablet
 @media screen and (max-width:768px) {

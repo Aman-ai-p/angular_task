@@ -77,7 +77,9 @@
                     <td>{{user.officename | getOffice:office}}</td>
                     <td>{{user.email}}</td>
                     <td>{{user.phone}}</td>
-                    <td><button (click)="edit(user.id)" >Edit</button><button (click)="deleteUserdata(user.id)">Delete</button></td>
+                    <td><button class="table-action-btn" (click)="edit(user.id)" >Edit</button>
+                        <button class="table-action-btn" (click)="deleteUserdata(user.id)">Delete</button>
+                    </td>
                 </tr>
 
                 <div *ngIf="userdata.length == 0">

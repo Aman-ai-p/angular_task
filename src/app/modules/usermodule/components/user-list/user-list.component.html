@@ -32,8 +32,8 @@
                 <td>{{user.date | date: 'dd/MM/yyyy' }}</td>
                 <td>{{user.department | getByid:dept }}</td>
                 <td>
-                    <button (click)="displayOverlay(user.id)">Edit</button>
-                    <button (click)="delete(user.id)">Delete</button>
+                    <button class="table-action-btn" (click)="displayOverlay(user.id)">Edit</button>
+                    <button class="table-action-btn" (click)="delete(user.id)">Delete</button>
                 </td>
             </tr>
         </table>
