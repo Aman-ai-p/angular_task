@@ -228,7 +228,7 @@
     {
       "firstname": "Ankit",
       "lastname": "Patel",
-      "age": 21,
+      "age": 28,
       "id": 3
     }
   ],
@@ -274,6 +274,32 @@
               "hobby_1": "Football",
               "hobby_2": "Chess",
               "hobby_3": "Dance"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Abhi",
+          "age": 22,
+          "gender": "male",
+          "hobby": [
+            {
+              "hobby_1": "Football",
+              "hobby_2": "Chess",
+              "hobby_3": "Reading"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Harsh",
+          "age": 22,
+          "gender": "male",
+          "hobby": [
+            {
+              "hobby_1": "Football",
+              "hobby_2": "Chess",
+              "hobby_3": "Reading"
             }
           ]
         }
