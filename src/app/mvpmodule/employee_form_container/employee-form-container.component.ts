@@ -19,9 +19,11 @@ export class EmployeeFormContainerComponent implements OnInit {
     private router : Router,
     private activatedRoute : ActivatedRoute
   ) { 
+    
     this.employeeData$ = new Observable();
     this.id = this.activatedRoute.snapshot.params['id'];
     console.log(this.id)
+
     if (this.id) {
       this.employeeData$ = this.service.getEmployeeById(this.id);
     }
