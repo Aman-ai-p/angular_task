@@ -212,26 +212,7 @@
       "department": "Electrical"
     }
   ],
-  "employee": [
-    {
-      "firstname": "Aman",
-      "lastname": "Patel",
-      "age": 23,
-      "id": 1
-    },
-    {
-      "firstname": "Ankit",
-      "lastname": "Patel",
-      "age": 22,
-      "id": 2
-    },
-    {
-      "firstname": "Ankit",
-      "lastname": "Patel",
-      "age": 28,
-      "id": 3
-    }
-  ],
+  "employee": [],
   "employeeDepartment": [
     {
       "id": 1,

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { EmployeeData, EmployeeDepartment,  } from './employee.model';
+import { EmployeeData, EmployeeDepartment, EmployeeForm,  } from './employee.model';
 
 
 @Injectable()
@@ -20,8 +20,8 @@ export class MvpService {
   }
 
   // Save Employee Data To DB
-  public addEmployee(form: any): any {
-    return this.http.post<any>(`${this.apiLink}/employee`, form)
+  public addEmployee(form: EmployeeForm): Observable<EmployeeForm> {
+    return this.http.post<EmployeeForm>(`${this.apiLink}/employee`, form)
   }
 
   // To delete Data

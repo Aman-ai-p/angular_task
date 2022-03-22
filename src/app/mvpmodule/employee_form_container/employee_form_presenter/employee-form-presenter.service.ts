@@ -18,6 +18,7 @@ export class EmployeeFormPresenterService {
     this.employeeFormData$ = this.employeeFormData.asObservable();
    }
 
+  //  Build Form Group
   buildform(){
     return this.fb.group({
       firstname: ['', Validators.required],
@@ -28,7 +29,7 @@ export class EmployeeFormPresenterService {
 
 
   // On Submit
-  onSubmit(employeeForm: FormGroup) {
+  public submitData(employeeForm: FormGroup) {
     if (!employeeForm.valid) {
       return
     }

@@ -31,18 +31,15 @@ export class EmployeeFormContainerComponent implements OnInit {
   }
 
   // Add employee
-  public addEmployee(employeeForm: EmployeeForm) {
-    this.service.addEmployee(employeeForm).subscribe(
-      (res: any) => {
-        this.router.navigateByUrl('mvp/list' );
-      }
+  public add(employeeForm: EmployeeForm) {
+    this.service.addEmployee(employeeForm).subscribe((res : EmployeeForm) =>
+        this.router.navigateByUrl('mvp/list')
     );
   }
 
   // Edit Employee
   public editEmployee(employeeForm: EmployeeForm) {
-    this.service.editEmployee(employeeForm , this.id).subscribe(
-      (res: any) => {
+    this.service.editEmployee(employeeForm , this.id).subscribe((res: EmployeeForm) => {
         this.router.navigateByUrl('mvp/list');
       }
     );

@@ -18,7 +18,7 @@ export class EmployeeFormPresentationComponent implements OnInit {
     console.log(value);
     if (value) {
       console.log(value)
-      this.formTitle = "Edit Employee Data"
+      this.formTitle = "Edit"
       this.employeeform.patchValue(value);
       this._employeeData = value;
     }
@@ -43,19 +43,18 @@ export class EmployeeFormPresentationComponent implements OnInit {
     this.employeeform = this.employeeformService.buildform();
     this.add = new EventEmitter();
     this.edit = new EventEmitter();
-    this.formTitle = "ADD Employee Data";
+    this.formTitle = "ADD";
    }
 
   ngOnInit(): void {
     this.employeeformService.employeeFormData$.subscribe((res: EmployeeForm) => {
-      this.add.emit(res);
-      this.formTitle === 'Add Customer' ? this.add.emit(res) : this.edit.emit(res);;
+      this.formTitle === 'Edit' ? this.edit.emit(res) : this.add.emit(res);;
     })
   }
 
   // On Submit Form
   public onSubmit(){
-    this.employeeformService.onSubmit(this.employeeform)
+    this.employeeformService.submitData(this.employeeform)
   }
 
   // On cancel

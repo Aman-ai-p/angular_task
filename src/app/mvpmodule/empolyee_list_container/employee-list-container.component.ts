@@ -24,9 +24,10 @@ export class EmployeeListContainerComponent implements OnInit {
   }
 
   // Delete method
-  delete(id: number) {
+  public delete(id: number) {
     this.employeeListService.deleteEmployee(id).subscribe((res: any) => {
       console.log(res);
+      this.employeeList$ = this.employeeListService.getEmployeeList();
     });
   }
 
