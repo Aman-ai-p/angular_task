@@ -1,7 +1,12 @@
+
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { Overlay } from '@angular/cdk/overlay';
 import { EmployeeData } from '../../employee.model';
 import { EmployeeListPresenterService } from '../employee_list_presenter/employee-list-presenter.service';
+
+
+
 
 @Component({
   selector: 'app-employee-list-presentation',
@@ -12,21 +17,26 @@ import { EmployeeListPresenterService } from '../employee_list_presenter/employe
 })
 export class EmployeeListPresentationComponent implements OnInit {
 
+
   // Set Data for list
   @Input() public set employeeList(value : EmployeeData[] | null){
     console.log(value);
-    if(value){this._employeeList = value;}
+    if(value){
+      this._employeeList = value;
+    }
   }
 
   public get employeeList() : EmployeeData[] | null {
     return this._employeeList;
   }
 
+  // Delete
   @Output() public delete : EventEmitter<number>
-
+  
   private _employeeList! : EmployeeData[]
+  private _filterFormData : []
 
-  constructor( private employeeListPresenter : EmployeeListPresenterService, private router: Router ) { 
+  constructor( private employeeListPresenter : EmployeeListPresenterService, private router: Router, private overlay : Overlay ) { 
     this.delete = new EventEmitter();
   }
 
@@ -34,7 +44,10 @@ export class EmployeeListPresentationComponent implements OnInit {
     this.employeeListPresenter.delete$.subscribe((res: number) => {
       this.delete.emit(res);
     })
-    console.log(this.employeeList)
+
+    // Filter Data
+    this.filterData();
+    
   }
 
   // Delete
@@ -47,4 +60,30 @@ export class EmployeeListPresentationComponent implements OnInit {
     this.router.navigateByUrl(`mvp/edit/${id}`);
   }
 
+  // Open Overlay
+  public filterOverlay(){
+    this.employeeListPresenter.openFilter();
+  }
+
+  // Filter Data
+  public filterData(){
+    this.employeeListPresenter.filterData$.subscribe((res)=>{
+      this._filterFormData = res;
+      console.log(this._filterFormData);
+
+      let filterItem = Object.values(this._filterFormData);
+      console.log(filterItem)
+
+      let data = this._employeeList.filter((item) => {
+        
+      }) 
+      console.log(data)
+      
+    });
+
+
+  }
+
 }
+
+  

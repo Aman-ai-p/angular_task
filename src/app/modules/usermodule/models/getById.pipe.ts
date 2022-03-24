@@ -9,7 +9,6 @@ export class GetById implements PipeTransform {
 
 
     transform(id:number, dept:Department[]):string | undefined {
-
         return dept?.find(x=>x.id == id)?.deptname;
     }
     

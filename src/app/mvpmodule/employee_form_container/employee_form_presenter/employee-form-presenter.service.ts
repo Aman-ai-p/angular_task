@@ -23,7 +23,10 @@ export class EmployeeFormPresenterService {
     return this.fb.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
-      age: ['', Validators.required ]
+      age: ['', Validators.required ],
+      department : ['', Validators.required],
+      gender : ['', Validators.required],
+      city : ['', Validators.required]
     })
   }
 

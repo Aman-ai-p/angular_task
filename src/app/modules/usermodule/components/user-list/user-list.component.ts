@@ -1,10 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Department, Userlist } from '../../models/user.model';
+
 import { UserServiceService } from '../../services/user-service.service';
 import { Overlay } from '@angular/cdk/overlay';
 import { FormOverlayComponent } from '../overlay-model/form-overlay.component';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { DeletePopupComponent } from '../delete-popup/delete-popup.component';
+import { Department, Userlist } from '../../models/user.model';
 
 
 
@@ -21,7 +22,6 @@ export class UserListComponent implements OnInit {
   search:string="";
 
   constructor(private userService: UserServiceService, private overlay: Overlay) { 
-    
   }
 
   ngOnInit(): void {

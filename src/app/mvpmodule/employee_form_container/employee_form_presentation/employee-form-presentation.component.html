@@ -24,17 +24,29 @@
         <input type="number" formControlName="age" id="age" name="age" placeholder="age">
     </div>
 
-    <!-- <div>
+    <div>
       <label for="dept-select">Choose a Department:</label>
         <select formControlName="department" name="dept-select" id="dept-select">
-          <option *ngFor="let dept of department" [value]="dept.id">{{dept.deptname}}</option> 
+          <option *ngFor="let dept of employeedepartment" [value]="dept.department">{{dept.department}}</option> 
        </select> 
-    </div> -->
+    </div>
+
+    <div>
+      <label for="gender">Gender:</label>
+      <label  for="male" class="ms-4">Male</label>
+      <input class="form-check-input" formControlName="gender" value="Male" type="radio" name="gender" id="male">
+      <label for="female" class="ms-4">Female</label>
+      <input class="form-check-input" formControlName="gender" value="Female" type="radio" name="gender" id="female"><br>
+    </div>
+
+    <div>
+      <label for="city">City</label>
+      <input type="text" formControlName="city" id="city" name="city" placeholder="City">
+  </div>
 
     <div>
       <input type="button" class="btn" value="Submit" (click)="onSubmit()">
       <input type="button" class="btn" value="cancel" (click)="onCancel()">
-      <!-- <button class="btn" (click)="closeOverlayForm()"></button> -->
     </div>    
 
   </form>

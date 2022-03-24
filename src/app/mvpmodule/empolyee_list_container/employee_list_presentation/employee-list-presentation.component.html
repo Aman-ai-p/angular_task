@@ -4,26 +4,41 @@
 </header>
   
 <main class="container d-flex flex-grow justify-content-between flex-column">
-    <section class="head-form d-flex justify-content-between">
-        <button class="btn" routerLink="../add">+ Add</button>
-    </section>
-  
+
+    <div class="d-flex flex-grow-1 mb-3">
+        <div class="head-form d-flex justify-content-between">
+            <button class="btn" routerLink="../add">+ Add</button>
+        </div>
+    
+        <div class="fitler-container d-flex justify-content-end">       
+            <button class="btn" (click)="filterOverlay()">
+                <span class="filter-icon icon-filter1"></span> 
+                    Filter 
+            </button>
+        </div>  
+    </div>
+
     <div id="table-product" class="container list-container">
         <table class="table-product">
             <tr>
                 <th>#</th>
                 <th>First Name</th>
                 <th>Last Name</th>
+                <th>Department</th>
                 <th>Age</th>
-                <!-- <th>Department</th> -->
+                <th>Gender</th>
+                <th>City</th>
                 <th>Action</th>
             </tr>
       
-            <tr *ngFor="let employee of employeeList">
-                <td>{{employee.id}}</td>
+            <tr *ngFor="let employee of employeeList; let i = index">
+                <td>{{i+1}}</td>
                 <td>{{employee.firstname}}</td>
                 <td>{{employee.lastname}}</td>
+                <td>{{employee.department}}</td>
                 <td>{{employee.age}}</td>
+                <td>{{employee.gender}}</td>
+                <td>{{employee.city}}</td>
                 <td>
                     <button class="table-action-btn" (click)="onEdit(employee.id)">Edit</button>
                     <button class="table-action-btn" (click)="OnDelete(employee.id)">Delete</button>

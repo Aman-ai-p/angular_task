@@ -115,8 +115,7 @@ export class ResumeformComponent implements OnInit {
   // Education end
 
 
-
-  // Save Data to Db
+   // Save Data to Db
 
   createResume(){
     console.log(this.createform.value);

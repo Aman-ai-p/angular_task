@@ -212,7 +212,35 @@
       "department": "Electrical"
     }
   ],
-  "employee": [],
+  "employee": [
+    {
+      "firstname": "Ankit",
+      "lastname": "Patel",
+      "age": 22,
+      "department": "Frontend",
+      "gender": "Male",
+      "city": "Vapi",
+      "id": 1
+    },
+    {
+      "firstname": "Aman",
+      "lastname": "Patel",
+      "age": 22,
+      "department": "Mobile",
+      "gender": "Male",
+      "city": "Vapi",
+      "id": 2
+    },
+    {
+      "firstname": "Abhi",
+      "lastname": "Patel",
+      "age": 23,
+      "department": ".Net",
+      "gender": "Male",
+      "city": "Valsad",
+      "id": 3
+    }
+  ],
   "employeeDepartment": [
     {
       "id": 1,
@@ -235,7 +263,7 @@
         {
           "id": 1,
           "name": "Aman",
-          "age": 22,
+          "age": 18,
           "gender": "male",
           "hobby": [
             {

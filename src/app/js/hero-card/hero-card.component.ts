@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JsDepartment } from '../js.model';
+import { Employee, JsDepartment } from '../js.model';
 import { JsService } from '../js.service';
 
 @Component({
@@ -22,6 +22,14 @@ export class HeroCardComponent implements OnInit {
       this.empData = res;
       console.log(this.empData)
     })
+  }
+
+  public above(){
+    let newData = this.empData.filter((data: JsDepartment) => {
+      return data.id == 1
+    })
+
+    console.log(newData);
   }
 
 }

@@ -14,6 +14,11 @@ export class MvpService {
     this.apiLink = environment.baseURL;
   }
 
+  // Get department
+  public getEmployeeDepartemnt(): Observable<EmployeeDepartment[]>{
+    return this.http.get<EmployeeDepartment[]>(`${this.apiLink}/employeeDepartment`)
+  }
+
   // Display Data to List
   public getEmployeeList(): Observable<EmployeeData[]>{
     return this.http.get<EmployeeData[]>(`${this.apiLink}/employee`)

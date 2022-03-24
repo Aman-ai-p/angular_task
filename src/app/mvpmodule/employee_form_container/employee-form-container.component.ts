@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { EmployeeData, EmployeeForm } from '../employee.model';
+import { EmployeeData, EmployeeDepartment, EmployeeForm } from '../employee.model';
 import { MvpService } from '../mvp.service';
 
 @Component({
@@ -12,6 +12,7 @@ import { MvpService } from '../mvp.service';
 export class EmployeeFormContainerComponent implements OnInit {
 
   public employeeData$ : Observable<EmployeeData>
+  public employeeDepartment$ : Observable<EmployeeDepartment[]>
   public id!: string;
 
   constructor(
@@ -30,14 +31,17 @@ export class EmployeeFormContainerComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.employeeDepartment$ = this.service.getEmployeeDepartemnt();
   }
 
   // Add employee
-  public add(employeeForm: EmployeeForm) {
+  public addEmployee(employeeForm: EmployeeForm) {
     this.service.addEmployee(employeeForm).subscribe((res : EmployeeForm) =>
         this.router.navigateByUrl('mvp/list')
     );
   }
+
+  
 
   // Edit Employee
   public editEmployee(employeeForm: EmployeeForm) {

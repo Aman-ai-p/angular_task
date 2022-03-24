@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormGroup } from '@angular/forms';
-import { EmployeeData, EmployeeForm } from '../../employee.model';
+import { EmployeeData, EmployeeDepartment, EmployeeForm } from '../../employee.model';
 import { EmployeeFormPresenterService } from '../employee_form_presenter/employee-form-presenter.service';
 
 @Component({
@@ -23,12 +23,23 @@ export class EmployeeFormPresentationComponent implements OnInit {
       this._employeeData = value;
     }
   }
-
   public get employeeData() : EmployeeData | null {
     return this._employeeData;
   }
+
+  // set Employee Department
+  @Input() public set employeeDepartment(dept : EmployeeDepartment[] | null){
+    if(dept){
+      this._department = dept;
+    }
+  }
+  public get employeedepartment() : EmployeeDepartment[] {
+    return this._department;
+  }
+
   
   private _employeeData!: EmployeeData;
+  private _department : EmployeeDepartment[];
 
   @Output() public add: EventEmitter<EmployeeForm>;
   @Output() public edit: EventEmitter<EmployeeForm>;
@@ -48,7 +59,7 @@ export class EmployeeFormPresentationComponent implements OnInit {
 
   ngOnInit(): void {
     this.employeeformService.employeeFormData$.subscribe((res: EmployeeForm) => {
-      this.formTitle === 'Edit' ? this.edit.emit(res) : this.add.emit(res);;
+      this.formTitle === 'Edit' ? this.edit.emit(res) : this.add.emit(res);
     })
   }
 

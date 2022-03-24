@@ -10,6 +10,10 @@ import { EmployeeListPresentationComponent } from './empolyee_list_container/emp
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MvpService } from './mvp.service';
+import { FilterPresentationComponent } from './empolyee_list_container/employee_list_presentation/filter-presentation/filter-presentation.component';
+import { OverlayModule } from '@angular/cdk/overlay';
+
+
 
 
 
@@ -19,7 +23,8 @@ import { MvpService } from './mvp.service';
     EmployeeFormContainerComponent,
     EmployeeListContainerComponent,
     EmployeeFormPresentationComponent,
-    EmployeeListPresentationComponent
+    EmployeeListPresentationComponent,
+    FilterPresentationComponent
   ],
   imports: [
     CommonModule,
@@ -27,6 +32,8 @@ import { MvpService } from './mvp.service';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    OverlayModule
+
   ],
   providers: [
     MvpService
