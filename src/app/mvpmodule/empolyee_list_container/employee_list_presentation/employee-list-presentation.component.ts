@@ -49,15 +49,15 @@ export class EmployeeListPresentationComponent implements OnInit {
       let filterdata = this._employeeList.filter((item)=>{
         return item.age == res.age;
       })
-       console.log(filterdata)
-       filterdata.forEach(el => {
-         if(filterdata){
-           filterdata = filterdata.filter(item =>{
-             return Object.values(Object.entries(item))
-           })
-         }
-       })   
-       console.log(filterdata);
+      //  console.log(filterdata)
+      //  let filterdata = this._employeeList.forEach(el => {
+      //    if(el.age != 0){
+      //     el.filter((item:any) =>{
+      //        return Object.values(Object.entries(item))
+      //      })
+      //    }
+      //  })   
+      //  console.log(filterdata);
         
     });
   }
