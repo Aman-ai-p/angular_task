@@ -45,13 +45,20 @@ export class EmployeeListPresentationComponent implements OnInit {
     })    
 
     this.employeeListPresenter.filterData$.subscribe((res)=>{
-  
+      
       let filterdata = this._employeeList.filter((item)=>{
         return item.age == res.age;
       })
-
-      console.log(filterdata)
-      
+       console.log(filterdata)
+       filterdata.forEach(el => {
+         if(filterdata){
+           filterdata = filterdata.filter(item =>{
+             return Object.values(Object.entries(item))
+           })
+         }
+       })   
+       console.log(filterdata);
+        
     });
   }
 
