@@ -34,7 +34,6 @@ export class EmployeeListPresentationComponent implements OnInit {
   @Output() public delete : EventEmitter<number>
   
   private _employeeList! : EmployeeData[]
-  private _filterFormData : []
 
   constructor( private employeeListPresenter : EmployeeListPresenterService, private router: Router, private overlay : Overlay ) { 
     this.delete = new EventEmitter();
@@ -43,11 +42,17 @@ export class EmployeeListPresentationComponent implements OnInit {
   ngOnInit(): void {
     this.employeeListPresenter.delete$.subscribe((res: number) => {
       this.delete.emit(res);
-    })
+    })    
 
-    // Filter Data
-    this.filterData();
-    
+    this.employeeListPresenter.filterData$.subscribe((res)=>{
+  
+      let filterdata = this._employeeList.filter((item)=>{
+        return item.age == res.age;
+      })
+
+      console.log(filterdata)
+      
+    });
   }
 
   // Delete
@@ -63,25 +68,6 @@ export class EmployeeListPresentationComponent implements OnInit {
   // Open Overlay
   public filterOverlay(){
     this.employeeListPresenter.openFilter();
-  }
-
-  // Filter Data
-  public filterData(){
-    this.employeeListPresenter.filterData$.subscribe((res)=>{
-      this._filterFormData = res;
-      console.log(this._filterFormData);
-
-      let filterItem = Object.values(this._filterFormData);
-      console.log(filterItem)
-
-      let data = this._employeeList.filter((item) => {
-        
-      }) 
-      console.log(data)
-      
-    });
-
-
   }
 
 }

@@ -48,7 +48,7 @@ export class EmployeeListPresenterService {
     
     componentRef.instance.filterData.subscribe((res) =>{
       this._filterData.next(res);
-      // overlayRef.detach();
+      overlayRef.detach();
     })
   }
   
