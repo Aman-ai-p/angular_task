@@ -1,7 +1,8 @@
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { EmployeeData } from '../../employee.model';
 import { FilterPresentationComponent } from '../employee_list_presentation/filter-presentation/filter-presentation.component';
 
 @Injectable()
@@ -33,6 +34,8 @@ export class EmployeeListPresenterService {
   
   // Display overlay
   public openFilter() {
+    
+    // create overlay
     const overlayRef = this.overlay.create({
       hasBackdrop: true,
       positionStrategy: this.overlay.position()
@@ -42,6 +45,7 @@ export class EmployeeListPresenterService {
     const componentRef = overlayRef.attach(component);   
     overlayRef.backdropClick().subscribe(() => overlayRef.detach());
 
+    // Close Overlay
     componentRef.instance.closeOverlay.subscribe(()=>{
       overlayRef.detach();
     })

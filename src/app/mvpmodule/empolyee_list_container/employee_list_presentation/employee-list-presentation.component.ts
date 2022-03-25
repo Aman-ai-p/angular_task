@@ -13,7 +13,7 @@ import { EmployeeListPresenterService } from '../employee_list_presenter/employe
   templateUrl: './employee-list-presentation.component.html',
   styleUrls: ['./employee-list-presentation.component.scss'],
   viewProviders: [EmployeeListPresenterService],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmployeeListPresentationComponent implements OnInit {
 
@@ -44,21 +44,24 @@ export class EmployeeListPresentationComponent implements OnInit {
       this.delete.emit(res);
     })    
 
-    this.employeeListPresenter.filterData$.subscribe((res)=>{
+    this.employeeListPresenter.filterData$.subscribe((res)=>{ 
+
+      let filterdata = [...this._employeeList];
+
+      let data = filterdata.map(item => { return Object.keys(item)});
+      let datakey = data[0];
+      console.log(datakey);
       
-      let filterdata = this._employeeList.filter((item)=>{
-        return item.age == res.age;
+      datakey.forEach((item) => {
+        if(res[item]){
+          filterdata = filterdata.filter((data: any)=>{
+            return data[item] == res[item]
+          })
+        }
       })
-      //  console.log(filterdata)
-      //  let filterdata = this._employeeList.forEach(el => {
-      //    if(el.age != 0){
-      //     el.filter((item:any) =>{
-      //        return Object.values(Object.entries(item))
-      //      })
-      //    }
-      //  })   
-      //  console.log(filterdata);
-        
+      console.log(filterdata)
+      this._employeeList = filterdata
+
     });
   }
 
