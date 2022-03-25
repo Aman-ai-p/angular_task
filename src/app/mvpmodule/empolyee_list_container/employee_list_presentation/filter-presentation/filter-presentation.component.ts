@@ -1,5 +1,5 @@
 import { coerceStringArray } from '@angular/cdk/coercion';
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { EmployeeForm } from 'src/app/mvpmodule/employee.model';
 import { FilterPresenterService } from '../filter-presenter/filter-presenter.service';
@@ -15,7 +15,8 @@ import { FilterPresenterService } from '../filter-presenter/filter-presenter.ser
 export class FilterPresentationComponent implements OnInit {
 
   @Output() closeOverlay: EventEmitter<Event>;
-  @Output() filterData : EventEmitter<any>
+  @Output() filterData : EventEmitter<any>;
+  
 
   public filterForm: FormGroup;
 
@@ -26,10 +27,13 @@ export class FilterPresentationComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.filterPresenter.filterFormData$.subscribe((res) =>{
       this.filterData.emit(res);
-    })
+    });
   }
+
+  
 
   // On submit
   public onSumit(){

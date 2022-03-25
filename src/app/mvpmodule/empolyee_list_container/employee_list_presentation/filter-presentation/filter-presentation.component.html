@@ -2,12 +2,6 @@
 
       <h5>Filter</h5>
 
-      <!-- Firstname -->
-      <div class="mb-3">
-            <label for="" class="form-label">By Firstname: </label>
-            <input formControlName="firstname" type="text" class="form-control" placeholder="Filter for First Name">
-      </div>
-
       <!-- Lastname -->
       <div class="mb-3">
             <label for="" class="form-label">By Lastname: </label>
@@ -42,7 +36,7 @@
       </div> -->
 
       <div class="mb-3">
-            <button class="btn" (click)="onSumit()">Submit</button>
-            <button class="btn" (click)="closeOverlayForm()">Cancel</button>
+            <button type="button" class="btn" (click)="onSumit()">Filter</button>
+            <button type="button" class="btn" (click)="closeOverlayForm()">Cancel</button>
       </div>
 </form>

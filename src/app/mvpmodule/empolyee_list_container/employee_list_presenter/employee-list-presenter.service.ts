@@ -1,5 +1,6 @@
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
+import { LowerCasePipe } from '@angular/common';
 import { Injectable, Input } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { EmployeeData } from '../../employee.model';
@@ -15,6 +16,7 @@ export class EmployeeListPresenterService {
   private _filterData : Subject<any>;
   public filterData$ : Observable<any>
 
+
   constructor(private overlay: Overlay) { 
     // Service of delete
     this.delete = new Subject();
@@ -24,6 +26,7 @@ export class EmployeeListPresenterService {
     this._filterData = new Subject();
     this.filterData$ = new Observable();
     this.filterData$ = this._filterData.asObservable();
+
   }
 
   // Delete method
@@ -54,19 +57,18 @@ export class EmployeeListPresenterService {
     componentRef.instance.filterData.subscribe((res) =>{
 
       // Filtering Data
-      let filterdata = [...listData];
-      let data = filterdata.map(item => { return Object.keys(item)});
+      let _filterFormData = [...listData];
+      let data = _filterFormData.map(item => { return Object.keys(item)});
+      console.log(data)
       let datakey = data[0];
       datakey.forEach((item) => {
         if(res[item]){
-          filterdata = filterdata.filter((data: any)=>{
-            return data[item] == res[item]
+          _filterFormData = _filterFormData.filter((data: any)=>{
+            return data[item].toString().toLowerCase() == res[item].toString().toLowerCase()
           })
         }
       })
-      console.log(filterdata)
-      listData = filterdata
-
+      listData = _filterFormData
       this._filterData.next(listData);
       overlayRef.detach();
     })

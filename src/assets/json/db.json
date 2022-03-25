@@ -248,6 +248,33 @@
       "gender": "Female",
       "city": "ava",
       "id": 4
+    },
+    {
+      "firstname": "Tanmay",
+      "lastname": "Patel",
+      "age": 25,
+      "department": "Frontend",
+      "gender": "Male",
+      "city": "Surat",
+      "id": 5
+    },
+    {
+      "firstname": "Priya",
+      "lastname": "Patel",
+      "age": 28,
+      "department": ".Net",
+      "gender": "Female",
+      "city": "Rajkot",
+      "id": 6
+    },
+    {
+      "firstname": "Suraj",
+      "lastname": "Singh",
+      "age": 30,
+      "department": "Mobile",
+      "gender": "Male",
+      "city": "Surat",
+      "id": 7
     }
   ],
   "employeeDepartment": [

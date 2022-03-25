@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Overlay } from '@angular/cdk/overlay';
 import { EmployeeData } from '../../employee.model';
 import { EmployeeListPresenterService } from '../employee_list_presenter/employee-list-presenter.service';
+import { Employee } from 'src/app/js/js.model';
 
 
 
@@ -22,6 +23,10 @@ export class EmployeeListPresentationComponent implements OnInit {
   @Input() public set employeeList(value : EmployeeData[] | null){
     console.log(value);
     if(value){
+      if(!this._employeeListOrignal){
+        this._employeeListOrignal = value;
+      }
+     
       this._employeeList = value;
     }
   }
@@ -33,7 +38,10 @@ export class EmployeeListPresentationComponent implements OnInit {
   // Delete
   @Output() public delete : EventEmitter<number>
   
-  private _employeeList! : EmployeeData[]
+  private _employeeList! : EmployeeData[];
+  private _employeeListOrignal :EmployeeData[];
+  public isFilterMode : Boolean;
+  
 
   constructor( private employeeListPresenter : EmployeeListPresenterService, private router: Router, private overlay : Overlay ) { 
     this.delete = new EventEmitter();
@@ -58,13 +66,15 @@ export class EmployeeListPresentationComponent implements OnInit {
 
   // Open Overlay
   public filterOverlay( ){
-    this.employeeListPresenter.openFilter(this._employeeList);
+    this.employeeListPresenter.openFilter(this._employeeListOrignal);
+    
   }
 
   // Filter List
   public filterList(){
     this.employeeListPresenter.filterData$.subscribe((res)=>{ 
-      this._employeeList = res 
+      this._employeeList = res ;
+      this.isFilterMode = true
     });
   }
 

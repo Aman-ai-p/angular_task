@@ -8,6 +8,10 @@
     background-color: #2f6bff;
     cursor: pointer;
     border-radius: 10px;
+
+    &:hover,&.active{
+      background-color: #6d93f5;
+    }
   }
 
 .table-action-btn{
