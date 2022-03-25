@@ -43,26 +43,7 @@ export class EmployeeListPresentationComponent implements OnInit {
     this.employeeListPresenter.delete$.subscribe((res: number) => {
       this.delete.emit(res);
     })    
-
-    this.employeeListPresenter.filterData$.subscribe((res)=>{ 
-
-      let filterdata = [...this._employeeList];
-
-      let data = filterdata.map(item => { return Object.keys(item)});
-      let datakey = data[0];
-      console.log(datakey);
-      
-      datakey.forEach((item) => {
-        if(res[item]){
-          filterdata = filterdata.filter((data: any)=>{
-            return data[item] == res[item]
-          })
-        }
-      })
-      console.log(filterdata)
-      this._employeeList = filterdata
-
-    });
+    this.filterList();
   }
 
   // Delete
@@ -76,8 +57,15 @@ export class EmployeeListPresentationComponent implements OnInit {
   }
 
   // Open Overlay
-  public filterOverlay(){
-    this.employeeListPresenter.openFilter();
+  public filterOverlay( ){
+    this.employeeListPresenter.openFilter(this._employeeList);
+  }
+
+  // Filter List
+  public filterList(){
+    this.employeeListPresenter.filterData$.subscribe((res)=>{ 
+      this._employeeList = res 
+    });
   }
 
 }

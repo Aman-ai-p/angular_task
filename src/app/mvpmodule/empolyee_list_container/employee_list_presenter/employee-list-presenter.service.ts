@@ -33,8 +33,8 @@ export class EmployeeListPresenterService {
 
   
   // Display overlay
-  public openFilter() {
-    
+  public openFilter(listData:EmployeeData[]) {
+
     // create overlay
     const overlayRef = this.overlay.create({
       hasBackdrop: true,
@@ -50,8 +50,24 @@ export class EmployeeListPresenterService {
       overlayRef.detach();
     })
     
+    // On submit Overlay form
     componentRef.instance.filterData.subscribe((res) =>{
-      this._filterData.next(res);
+
+      // Filtering Data
+      let filterdata = [...listData];
+      let data = filterdata.map(item => { return Object.keys(item)});
+      let datakey = data[0];
+      datakey.forEach((item) => {
+        if(res[item]){
+          filterdata = filterdata.filter((data: any)=>{
+            return data[item] == res[item]
+          })
+        }
+      })
+      console.log(filterdata)
+      listData = filterdata
+
+      this._filterData.next(listData);
       overlayRef.detach();
     })
   }
