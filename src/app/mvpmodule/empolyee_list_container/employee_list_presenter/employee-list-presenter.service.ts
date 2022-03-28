@@ -16,6 +16,14 @@ export class EmployeeListPresenterService {
   private _filterData : Subject<any>;
   public filterData$ : Observable<any>
 
+  private _pageList : Subject<EmployeeData[]>;
+  public pageList$ : Observable<EmployeeData[]>
+
+  public _filterFormData: any;
+  public pageNo : any;
+  public  noOfDataToView : any;
+  public onPageData: any;
+  public startNewData : any;
 
   constructor(private overlay: Overlay) { 
     // Service of delete
@@ -27,6 +35,10 @@ export class EmployeeListPresenterService {
     this.filterData$ = new Observable();
     this.filterData$ = this._filterData.asObservable();
 
+    this._pageList = new Subject();
+    this.pageList$ = new Observable();
+    this.pageList$ = this._pageList.asObservable();
+
   }
 
   // Delete method
@@ -36,7 +48,7 @@ export class EmployeeListPresenterService {
 
   
   // Display overlay
-  public openFilter(listData:EmployeeData[]) {
+  public openFilter(_listData:EmployeeData[]) {
 
     // create overlay
     const overlayRef = this.overlay.create({
@@ -57,21 +69,39 @@ export class EmployeeListPresenterService {
     componentRef.instance.filterData.subscribe((res) =>{
 
       // Filtering Data
-      let _filterFormData = [...listData];
-      let data = _filterFormData.map(item => { return Object.keys(item)});
+      this._filterFormData = [..._listData];
+      let data = this._filterFormData.map((item : any) => { return Object.keys(item)});
       console.log(data)
       let datakey = data[0];
-      datakey.forEach((item) => {
+      datakey.forEach((item:any) => {
         if(res[item]){
-          _filterFormData = _filterFormData.filter((data: any)=>{
+          this._filterFormData = this._filterFormData.filter((data: any)=>{
             return data[item].toString().toLowerCase() == res[item].toString().toLowerCase()
           })
         }
       })
-      listData = _filterFormData
-      this._filterData.next(listData);
+      _listData = this._filterFormData;
+      this._filterData.next(_listData);
       overlayRef.detach();
     })
+  }
+
+
+  // Pagination
+  public pagination(_employeeList : EmployeeData[],pageno: number){
+
+    let list = [..._employeeList];
+    let list2;
+    console.log(pageno);
+    
+    this.pageNo = pageno;
+    this.noOfDataToView = 4;
+    this.onPageData = this.pageNo * this.noOfDataToView;
+    this.startNewData = this.onPageData - this.noOfDataToView;
+    list2 = list.slice(this.startNewData, this.onPageData)
+    // console.log(list2);
+    this._pageList.next(list2)
+    
   }
   
 }

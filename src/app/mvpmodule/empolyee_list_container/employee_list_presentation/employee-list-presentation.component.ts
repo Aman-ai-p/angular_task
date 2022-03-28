@@ -6,9 +6,6 @@ import { EmployeeData } from '../../employee.model';
 import { EmployeeListPresenterService } from '../employee_list_presenter/employee-list-presenter.service';
 import { Employee } from 'src/app/js/js.model';
 
-
-
-
 @Component({
   selector: 'app-employee-list-presentation',
   templateUrl: './employee-list-presentation.component.html',
@@ -25,8 +22,7 @@ export class EmployeeListPresentationComponent implements OnInit {
     if(value){
       if(!this._employeeListOrignal){
         this._employeeListOrignal = value;
-      }
-     
+      }     
       this._employeeList = value;
     }
   }
@@ -36,7 +32,8 @@ export class EmployeeListPresentationComponent implements OnInit {
   }
 
   // Delete
-  @Output() public delete : EventEmitter<number>
+  @Output() public delete : EventEmitter<number>;
+  @Output() public originalData : EventEmitter<EmployeeData[]>;
   
   private _employeeList! : EmployeeData[];
   private _employeeListOrignal :EmployeeData[];
@@ -45,6 +42,7 @@ export class EmployeeListPresentationComponent implements OnInit {
 
   constructor( private employeeListPresenter : EmployeeListPresenterService, private router: Router, private overlay : Overlay ) { 
     this.delete = new EventEmitter();
+    this.originalData = new EventEmitter();
   }
 
   ngOnInit(): void {
@@ -52,6 +50,7 @@ export class EmployeeListPresentationComponent implements OnInit {
       this.delete.emit(res);
     })    
     this.filterList();
+    this.pageList();
   }
 
   // Delete
@@ -76,6 +75,18 @@ export class EmployeeListPresentationComponent implements OnInit {
       this._employeeList = res ;
       this.isFilterMode = true
     });
+  }
+  
+  // Pagination
+  public page(pageno:number){
+    this.employeeListPresenter.pagination(this._employeeList, pageno);
+  }
+
+  public pageList(){
+    this.employeeListPresenter.pageList$.subscribe((res) =>{
+      console.log(res);
+      this._employeeList = res;
+    })
   }
 
 }
