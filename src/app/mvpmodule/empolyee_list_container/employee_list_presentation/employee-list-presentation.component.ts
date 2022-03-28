@@ -1,10 +1,9 @@
 
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {  Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Overlay } from '@angular/cdk/overlay';
 import { EmployeeData } from '../../employee.model';
 import { EmployeeListPresenterService } from '../employee_list_presenter/employee-list-presenter.service';
-import { Employee } from 'src/app/js/js.model';
 
 @Component({
   selector: 'app-employee-list-presentation',
@@ -27,7 +26,7 @@ export class EmployeeListPresentationComponent implements OnInit {
     }
   }
 
-  public get employeeList() : EmployeeData[] | null {
+  public get employeeList() : EmployeeData[] {
     return this._employeeList;
   }
 
@@ -38,6 +37,7 @@ export class EmployeeListPresentationComponent implements OnInit {
   private _employeeList! : EmployeeData[];
   private _employeeListOrignal :EmployeeData[];
   public isFilterMode : Boolean;
+  public displayList : EmployeeData[];
   
 
   constructor( private employeeListPresenter : EmployeeListPresenterService, private router: Router, private overlay : Overlay ) { 
@@ -50,7 +50,6 @@ export class EmployeeListPresentationComponent implements OnInit {
       this.delete.emit(res);
     })    
     this.filterList();
-    this.pageList();
   }
 
   // Delete
@@ -78,15 +77,8 @@ export class EmployeeListPresentationComponent implements OnInit {
   }
   
   // Pagination
-  public page(pageno:number){
-    this.employeeListPresenter.pagination(this._employeeList, pageno);
-  }
-
-  public pageList(){
-    this.employeeListPresenter.pageList$.subscribe((res) =>{
-      console.log(res);
-      this._employeeList = res;
-    })
+  public changePage(items: EmployeeData[]){
+    this.displayList = items;
   }
 
 }

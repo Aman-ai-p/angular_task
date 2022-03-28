@@ -50,6 +50,8 @@ export class EmployeeListPresenterService {
   // Display overlay
   public openFilter(_listData:EmployeeData[]) {
 
+    this._filterFormData = _listData
+
     // create overlay
     const overlayRef = this.overlay.create({
       hasBackdrop: true,
@@ -84,24 +86,6 @@ export class EmployeeListPresenterService {
       this._filterData.next(_listData);
       overlayRef.detach();
     })
-  }
-
-
-  // Pagination
-  public pagination(_employeeList : EmployeeData[],pageno: number){
-
-    let list = [..._employeeList];
-    let list2;
-    console.log(pageno);
-    
-    this.pageNo = pageno;
-    this.noOfDataToView = 4;
-    this.onPageData = this.pageNo * this.noOfDataToView;
-    this.startNewData = this.onPageData - this.noOfDataToView;
-    list2 = list.slice(this.startNewData, this.onPageData)
-    // console.log(list2);
-    this._pageList.next(list2)
-    
   }
   
 }

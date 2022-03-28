@@ -33,8 +33,6 @@ export class FilterPresentationComponent implements OnInit {
     });
   }
 
-  
-
   // On submit
   public onSumit(){
     this.filterPresenter.onFilter(this.filterForm);
@@ -44,5 +42,5 @@ export class FilterPresentationComponent implements OnInit {
   public closeOverlayForm(){
     this.closeOverlay.emit();
   }
-
+  
 }

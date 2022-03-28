@@ -82,7 +82,7 @@ export class FormOverlayComponent implements OnInit {
     this.userService.editdata(this.editId, this.userform.value).subscribe(() =>{
       this.router.navigate(['/users/userlist']);
       this.closeOverlayForm();
-    })
+    }) 
   }
 
 

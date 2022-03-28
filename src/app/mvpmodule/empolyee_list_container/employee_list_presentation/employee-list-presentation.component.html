@@ -1,9 +1,9 @@
 
 <header>
-    <h1>Employee List</h1>
+    <h3>Employee List</h3>
 </header>
   
-<main class="container d-flex flex-grow justify-content-between flex-column">
+<main class="container-fluid d-flex flex-grow justify-content-between flex-column">
 
     <div class="d-flex flex-grow-1 mb-3">
         <div class="head-form d-flex justify-content-between">
@@ -19,7 +19,7 @@
         </div>  
     </div>
 
-    <div id="table-product" class="container list-container">
+    <div id="table-product" class="container-fluid list-container">
         <table class="table-product">
             <tr>
                 <th>#</th>
@@ -32,8 +32,8 @@
                 <th>Action</th>
             </tr>
       
-            <tr *ngFor="let employee of employeeList; let i = index">
-                <td>{{i+1}}</td>
+            <tr *ngFor="let employee of displayList; let i = index">
+                <td>{{employee.id}}</td>
                 <td>{{employee.firstname}}</td>
                 <td>{{employee.lastname}}</td>
                 <td>{{employee.department}}</td>
@@ -47,7 +47,12 @@
             </tr>
 
         </table>
-        <!-- <button *ngFor="let employee of employeeList; let i = index" type="button" class="table-action-btn" (click)="page(i+1)">{{i+1}}</button> -->
+
+        <app-pagination [items]="employeeList" 
+                        [itemsPerPage]="5"
+                        (changePage)="changePage($event)" 
+                        class="d-flex justify-content-end mt-3"              
+        ></app-pagination>
     </div>
 </main> 
   

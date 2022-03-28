@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MvpService } from './mvp.service';
 import { FilterPresentationComponent } from './empolyee_list_container/employee_list_presentation/filter-presentation/filter-presentation.component';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -32,7 +33,8 @@ import { OverlayModule } from '@angular/cdk/overlay';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    OverlayModule
+    OverlayModule,
+    SharedModule
 
   ],
   providers: [
