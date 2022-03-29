@@ -1,0 +1,13 @@
+.cdk-drag-preview{
+      background-color: $primary;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      color : white;
+}
+
+
+.cdk-drag-placeholder {
+  background-color: grey;
+}

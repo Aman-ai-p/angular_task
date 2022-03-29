@@ -1,5 +1,5 @@
 
-import {  Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {  ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Overlay } from '@angular/cdk/overlay';
 import { EmployeeData } from '../../employee.model';
@@ -13,7 +13,6 @@ import { EmployeeListPresenterService } from '../employee_list_presenter/employe
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmployeeListPresentationComponent implements OnInit {
-
 
   // Set Data for list
   @Input() public set employeeList(value : EmployeeData[] | null){
@@ -37,12 +36,12 @@ export class EmployeeListPresentationComponent implements OnInit {
   private _employeeList! : EmployeeData[];
   private _employeeListOrignal :EmployeeData[];
   public isFilterMode : Boolean;
-  public displayList : EmployeeData[];
-  
+  public displayList : EmployeeData[];  
 
-  constructor( private employeeListPresenter : EmployeeListPresenterService, private router: Router, private overlay : Overlay ) { 
+  constructor( private employeeListPresenter : EmployeeListPresenterService, private router: Router, private overlay : Overlay,private cdr: ChangeDetectorRef) { 
     this.delete = new EventEmitter();
     this.originalData = new EventEmitter();
+    this.displayList =[];
   }
 
   ngOnInit(): void {
@@ -65,14 +64,13 @@ export class EmployeeListPresentationComponent implements OnInit {
   // Open Overlay
   public filterOverlay( ){
     this.employeeListPresenter.openFilter(this._employeeListOrignal);
-    
   }
 
   // Filter List
   public filterList(){
     this.employeeListPresenter.filterData$.subscribe((res)=>{ 
       this._employeeList = res ;
-      this.isFilterMode = true
+      this.isFilterMode = true;
     });
   }
   

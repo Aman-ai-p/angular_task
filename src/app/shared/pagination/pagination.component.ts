@@ -9,6 +9,7 @@ export class PaginationComponent implements OnInit {
 
   @Input() items: Array<any>;
   @Output() changePage = new EventEmitter<any>();
+  @Output() startIndex = new EventEmitter<any>();
   @Input() initialPage = 1;
   @Input() itemsPerPage = 5;
   @Input() maxPages = 10;
@@ -44,7 +45,6 @@ export class PaginationComponent implements OnInit {
   }
 
   paginate(totalItems: number, currentPage: number, itemsPerPage: number, maxPages: number) {
-    debugger
     //if user set to zeros
     if (currentPage === 0) { currentPage = 1; }
     if (itemsPerPage === 0) { itemsPerPage = 10; }

@@ -76,6 +76,7 @@ export class EmployeeListPresenterService {
       console.log(data)
       let datakey = data[0];
       datakey.forEach((item:any) => {
+        
         if(res[item]){
           this._filterFormData = this._filterFormData.filter((data: any)=>{
             return data[item].toString().toLowerCase() == res[item].toString().toLowerCase()

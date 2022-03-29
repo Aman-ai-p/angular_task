@@ -30,7 +30,8 @@ const routes: Routes = [
   },
   { 
     path: 'js', loadChildren: () => import('./js/js.module').then(m => m.JSModule) 
-  }
+  },
+  { path: 'dragdrop', loadChildren: () => import('./dragdrop/dragdrop.module').then(m => m.DragdropModule) }
 ];
 
 @NgModule({

@@ -1,0 +1,25 @@
+<div class="container-fluid d-flex flex-column bg-white justify-content-center">
+
+      <form class="p-4">
+            <!-- Name -->
+            <div class="input-group mb-3 flex-row align-items-center">
+                  <label for="name" class="pe-3">Name</label>
+                  <input type="text" class="form-control d-flex justify-content-end" placeholder="Username" id="name" name="name">
+            </div>
+            <!-- Age -->
+            <div class="input-group mb-3">
+                  <label for="age" class="pe-3">Age</label>
+                  <input type="number" class="form-control" placeholder="Age" id="age" name="age">
+            </div>
+            <!-- Text -->
+            <div class="input-group mb-3">
+                  <label for="someText" class="pe-3">Some Text</label>
+                  <input type="text" class="form-control" placeholder="Add some thing" id="someText" name="someText">
+            </div>
+            <div class="d-flex justify-content-start">
+                  <input type="button" value="Submit" class="btn">
+                  <input type="button" value="Cancel" class="btn" (click)="cancelOverlay()">
+            </div>
+      </form>
+
+</div>

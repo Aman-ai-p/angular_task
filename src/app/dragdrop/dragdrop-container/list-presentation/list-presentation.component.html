@@ -1,0 +1,86 @@
+<header>
+    <h6>List</h6>
+</header>
+
+<main class="container-fluid d-flex flex-grow justify-content-between flex-column">
+
+    <div class="d-flex flex-grow-1 mb-3">
+        <div class="head-form d-flex justify-content-between">
+            <button class="btn" type="button" (click)="openForm()">+ Add</button>
+        </div>
+
+        <div class="fitler-container d-flex justify-content-end">
+            <!-- <button class="btn" (click)="filterOverlay()">
+                  <span class="filter-icon icon-filter1"></span> 
+                      Filter 
+              </button>
+              <div *ngIf="isFilterMode" class="filter-notification-badge rounded-circle position-relative"></div> -->
+        </div>
+    </div>
+
+    <div id="table-product" class="container list-container">
+        <table class="table-product">
+            <tr>
+                <th># <button (click)="sortGroup('id')">sort</button> </th>
+                <th>Name <button (click)="sortGroup('name')">sort</button> </th>
+                <th>Description</th>
+                <th>Age</th>
+            </tr>
+
+            <tbody cdkDropList 
+                    #activelistData="cdkDropList" 
+                    [cdkDropListData]="listData"
+                    [cdkDropListConnectedTo]="[inactiveList]" 
+                    (cdkDropListDropped)="drop($event)">
+
+                <tr *ngIf="!listData.length">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr *ngFor="let data of listData, let i= index" cdkDrag>
+                    <td>{{data.id}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.sometext}}</td>
+                    <td>{{data.age}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <table class="mt-4 table-product">
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Age</th>
+            </tr>
+
+            <tbody cdkDropList #inactiveList="cdkDropList" 
+                    [cdkDropListData]="addList"
+                    [cdkDropListConnectedTo]="[activelistData]" 
+                    (cdkDropListDropped)="drop($event)"
+            >
+                <tr *ngIf="!addList.length">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr *ngFor="let data of addList, let i= index" cdkDrag>
+                    <td>{{data.id}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.sometext}}</td>
+                    <td>{{data.age}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+
+
+
+    </div>
+</main>
