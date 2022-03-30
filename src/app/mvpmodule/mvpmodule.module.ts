@@ -35,7 +35,6 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     OverlayModule,
     SharedModule
-
   ],
   providers: [
     MvpService

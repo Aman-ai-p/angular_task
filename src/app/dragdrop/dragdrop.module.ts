@@ -11,6 +11,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     HttpClientModule,
     FormsModule,
     DragDropModule,
+    SharedModule
   ],
   providers: [
     DragdropService

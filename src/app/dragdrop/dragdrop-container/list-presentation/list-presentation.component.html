@@ -4,27 +4,31 @@
 
 <main class="container-fluid d-flex flex-grow justify-content-between flex-column">
 
-    <div class="d-flex flex-grow-1 mb-3">
-        <div class="head-form d-flex justify-content-between">
+    <div class="d-flex flex-grow-1 mb-3 justify-content-between">
+        <div class="head-form d-flex">
             <button class="btn" type="button" (click)="openForm()">+ Add</button>
         </div>
 
-        <div class="fitler-container d-flex justify-content-end">
-            <!-- <button class="btn" (click)="filterOverlay()">
-                  <span class="filter-icon icon-filter1"></span> 
-                      Filter 
-              </button>
-              <div *ngIf="isFilterMode" class="filter-notification-badge rounded-circle position-relative"></div> -->
-        </div>
+        <app-search></app-search>
+
     </div>
 
-    <div id="table-product" class="container list-container">
+    <div id="table-product" class="container-fluid list-container">
         <table class="table-product">
             <tr>
-                <th># <button (click)="sortGroup('id')">sort</button> </th>
-                <th>Name <button (click)="sortGroup('name')">sort</button> </th>
+                <th># <span (click)="sortGroup('id')" class="badge px-1">
+                        ^
+                    </span> 
+                </th>
+                <th>Name <span (click)="sortGroup('name')" class="badge px-1">
+                        ^
+                    </span>  
+                </th>
                 <th>Description</th>
-                <th>Age</th>
+                <th>Age <span (click)="sortGroup('age')" class="badge px-1">
+                        ^
+                    </span>
+                </th>
             </tr>
 
             <tbody cdkDropList 
@@ -50,6 +54,8 @@
 
         </table>
 
+        <!-- Start : List 2 -->
+        
         <table class="mt-4 table-product">
             <tr>
                 <th>#</th>
@@ -76,8 +82,9 @@
                     <td>{{data.age}}</td>
                 </tr>
             </tbody>
-
+            
         </table>
+        <!-- End : List 2 -->
 
 
 
