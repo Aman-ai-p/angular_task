@@ -12,13 +12,16 @@ import { DataList } from '../../data.model';
 @Injectable()
 export class ListPresenterService {
 
+  // Subject as Observable for form Overlay
   private openForm : Subject<any>;
   public openForm$ : Observable<any>;
 
+  // Subject as Observable for sorting the list
   private sortedData : Subject<DataList[]>;
   public  sortedData$ : Observable<DataList[]>;
 
-  public isDesc: boolean = false;
+  // Check the if descending order or not 
+  public isDesc : boolean;
 
   constructor(private overlay: Overlay) { 
     this.openForm = new Subject();
@@ -27,6 +30,8 @@ export class ListPresenterService {
 
     this.sortedData = new Subject();
     this.sortedData$ = new Observable();
+
+    this.isDesc = false;
   }
 
   // Opne Overlay
@@ -66,12 +71,10 @@ export class ListPresenterService {
     }
   }
 
-  // Sorting
+  // Sorting the list
   public sortBy(property: any, list:any){
-
     this.isDesc = !this.isDesc;
     let direction = this.isDesc ? 1 : -1;
-
     list.sort((a:any,b:any) => {
       if (a[property] < b[property]) {
         return -1 * direction;
@@ -83,7 +86,6 @@ export class ListPresenterService {
         return 0;
       }
     });
-
     this.sortedData.next(list);
   }
 

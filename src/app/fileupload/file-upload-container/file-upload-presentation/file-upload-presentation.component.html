@@ -1,0 +1,12 @@
+<div class="container">
+      <a>Upload File</a>
+
+      <!-- Start: Drag drop container for file upload -->
+      <div class="container my-3 py-5 upload-container d-flex align-items-center justify-content-center">
+            <form class="d-flex flex-column">
+                  <input type="file" name="file" id="file" (change)="addFiles($event)">
+                  <button type="button" class="btn my-3" (click)="uploadFile()">Upload File</button>
+            </form>
+      </div>
+      <!-- End: Drag drop container for file upload -->
+</div>
