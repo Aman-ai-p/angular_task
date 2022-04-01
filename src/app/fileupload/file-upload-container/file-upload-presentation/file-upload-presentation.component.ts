@@ -19,6 +19,7 @@ export class FileUploadPresentationComponent implements OnInit {
 
   public addFiles(fileToAdd :any){
     this.file = fileToAdd.target.files[0];
+    console.log(this.file);
   }
 
   public uploadFile(){
