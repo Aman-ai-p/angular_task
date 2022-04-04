@@ -28,8 +28,15 @@ export class FiledragDirective {
     event.stopPropagation();
     this.background = '#eee';
     let files = event.dataTransfer;
-    let valid_files : Array<File> = files;
-    this.filesChangeEmiter.emit(valid_files);
+    let filesize = event.dataTransfer.files[0];
+    if((filesize.size/1024/1024)<=2){
+      let valid_files : Array<File> = files;
+      this.filesChangeEmiter.emit(valid_files);
+    }
+    else
+    {
+      alert("File should be less than 2MB");
+    }
   }
 
 }

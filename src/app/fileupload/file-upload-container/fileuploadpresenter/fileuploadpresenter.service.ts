@@ -6,6 +6,7 @@ import { FileData } from '../../fileupload.model';
 export class FileuploadpresenterService {
 
   public fileData : FileData;
+  public fileExists : boolean = false;
 
   private fileRead : Subject<FileData>;
   public fileRead$ : Observable<FileData>;
@@ -17,9 +18,12 @@ export class FileuploadpresenterService {
     this.fileRead$ = this.fileRead.asObservable();
   }
 
-  public readFile(file : File){
+
+  // GET File name, size, type, content
+  public readFile(file : File, fileList: FileData[]){
+
     let size = Math.round(file.size/1024/1024);
-    if(size <=2 ){
+    if(size <= 2){
       this.fileData.filename = file.name;
       this.fileData.size = file.size;
       this.fileData.type = file.type;
@@ -27,12 +31,12 @@ export class FileuploadpresenterService {
       fileReader.readAsDataURL(file);
       fileReader.onload = (event) =>{
         this.fileData.content = event.target?.result as string;
-        // console.log(this.fileData.content)
         this.fileRead.next(this.fileData);
       }
     }
     else{
-      alert("File size is larger tha 2mb")
+      alert("File size is larger tha 2mb");
     }
   }
+
 }

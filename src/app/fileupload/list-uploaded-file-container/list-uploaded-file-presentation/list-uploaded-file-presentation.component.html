@@ -1,1 +1,25 @@
 <button class="btn" routerLink="../uploadfile">Upload a new file.</button>
+
+<div id="table-product" class="container-fluid list-containerm mt-4">
+      <table class="table-product">
+          <tr>
+              <th>#</th>
+              <th>File Name</th>
+              <th>File Size</th>
+              <th>File Type</th>
+              <th>Action</th>
+          </tr>
+    
+          <tr *ngFor="let file of fileList; let i = index">
+              <td>{{i + 1}}</td>
+              <td>{{file.filename}}</td>
+              <td>{{file.size}}</td>
+              <td>{{file.type}}</td>
+              <td>
+                <button type="button" class="table-action-btn" (click)="showFile(file.content, file.type)">View</button>
+              </td>
+          </tr>
+
+      </table>
+
+</div>

@@ -14,6 +14,18 @@ import { FileuploadpresenterService } from '../fileuploadpresenter/fileuploadpre
 })
 export class FileUploadPresentationComponent implements OnInit {
 
+  @Input() public set fileList(file : FileData[] | null){
+    if(file){
+      this._fileList = file;
+    }
+  }
+
+  public get fileList(): FileData[]{
+    return this._fileList;
+  }
+
+  private _fileList! : FileData[]
+
   @Output() fileUpload : EventEmitter<FileData>;
 
   public file : File;
@@ -26,15 +38,18 @@ export class FileUploadPresentationComponent implements OnInit {
     this.saveFile();
   }
 
+  // GET SELECTED FILES
   public addFiles(fileToAdd : any){
-    console.log(fileToAdd.files)
     this.file = fileToAdd.files[0];
+    console.log(this.file); 
   }
 
+  // GET NAME, TYPE, SIZE, Content of file
   public uploadFile(){
-    this.service.readFile(this.file)
+    this.service.readFile(this.file, this._fileList)
   }
 
+  // Save files
   public saveFile(){
     this.service.fileRead$.subscribe((res: FileData) => {
       this.fileUpload.emit(res);

@@ -10,10 +10,10 @@ import { FileuploadService } from '../fileupload.service';
 })
 export class ListUploadedFileContainerComponent implements OnInit {
 
-  public fileRead$ : Observable<FileData[]>
+  public fileList$ : Observable<FileData[]>
 
   constructor(private service : FileuploadService) { 
-    this.fileRead$ = new Observable();
+    this.fileList$ = new Observable();
   }
 
   ngOnInit(): void {
@@ -22,7 +22,7 @@ export class ListUploadedFileContainerComponent implements OnInit {
 
   // Get File List
   public getFile(){
-    this.fileRead$ = this.service.getFile()
+    this.fileList$ = this.service.getFile()
   }
 
 
