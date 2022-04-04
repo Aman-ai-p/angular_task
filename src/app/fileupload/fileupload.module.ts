@@ -9,6 +9,7 @@ import { FileUploadPresentationComponent } from './file-upload-container/file-up
 import { ListUploadedFilePresentationComponent } from './list-uploaded-file-container/list-uploaded-file-presentation/list-uploaded-file-presentation.component';
 import { FileuploadService } from './fileupload.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     FileuploadRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers : [
     FileuploadService

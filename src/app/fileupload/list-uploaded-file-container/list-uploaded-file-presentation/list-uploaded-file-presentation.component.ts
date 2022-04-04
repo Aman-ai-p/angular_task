@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FileData } from '../../fileupload.model';
 
 @Component({
   selector: 'app-list-uploaded-file-presentation',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListUploadedFilePresentationComponent implements OnInit {
 
+  @Input() public fileList(file : FileData[] | null){
+    
+  }
   constructor() { }
 
   ngOnInit(): void {

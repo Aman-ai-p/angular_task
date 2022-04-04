@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PaginationComponent } from './pagination/pagination.component';
 import { SearchComponent } from './search/search.component';
 import { FiledragDirective } from './dragdrop directives/filedrag.directive';
+import { DatepickerComponent } from './datepicker/datepicker.component';
 
 
 
@@ -10,7 +11,8 @@ import { FiledragDirective } from './dragdrop directives/filedrag.directive';
   declarations: [
     PaginationComponent,
     SearchComponent,
-    FiledragDirective
+    FiledragDirective,
+    DatepickerComponent
   ],
   imports: [
     CommonModule

@@ -1,29 +1,43 @@
+import { ChangeDetectionStrategy } from '@angular/core';
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { FileuploadService } from '../../fileupload.service';
+import { FileData } from '../../fileupload.model';
+
+import { FileuploadpresenterService } from '../fileuploadpresenter/fileuploadpresenter.service';
 
 
 @Component({
   selector: 'app-file-upload-presentation',
   templateUrl: './file-upload-presentation.component.html',
-  styleUrls: ['./file-upload-presentation.component.scss']
+  styleUrls: ['./file-upload-presentation.component.scss'],
+  viewProviders : [FileuploadpresenterService],
+  changeDetection : ChangeDetectionStrategy.OnPush
 })
 export class FileUploadPresentationComponent implements OnInit {
 
-  public file : string;
+  @Output() fileUpload : EventEmitter<FileData>;
 
-  constructor(private service: FileuploadService) { 
+  public file : File;
+
+  constructor(private service: FileuploadpresenterService) { 
+    this.fileUpload = new EventEmitter();
   }
 
   ngOnInit(): void {
+    this.saveFile();
   }
 
-  public addFiles(fileToAdd :any){
-    this.file = fileToAdd.target.files[0];
-    console.log(this.file);
+  public addFiles(fileToAdd : any){
+    console.log(fileToAdd.files)
+    this.file = fileToAdd.files[0];
   }
 
   public uploadFile(){
- 
+    this.service.readFile(this.file)
   }
 
+  public saveFile(){
+    this.service.fileRead$.subscribe((res: FileData) => {
+      this.fileUpload.emit(res);
+    })
+  }
 }
