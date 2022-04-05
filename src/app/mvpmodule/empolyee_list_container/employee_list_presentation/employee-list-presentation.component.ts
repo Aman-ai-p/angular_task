@@ -10,7 +10,7 @@ import { EmployeeListPresenterService } from '../employee_list_presenter/employe
   templateUrl: './employee-list-presentation.component.html',
   styleUrls: ['./employee-list-presentation.component.scss'],
   viewProviders: [EmployeeListPresenterService],
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmployeeListPresentationComponent implements OnInit {
 
@@ -41,7 +41,7 @@ export class EmployeeListPresentationComponent implements OnInit {
   constructor( private employeeListPresenter : EmployeeListPresenterService, private router: Router, private overlay : Overlay,private cdr: ChangeDetectorRef) { 
     this.delete = new EventEmitter();
     this.originalData = new EventEmitter();
-    this.displayList =[];
+    this.displayList = [];
   }
 
   ngOnInit(): void {

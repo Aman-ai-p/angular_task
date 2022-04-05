@@ -25,6 +25,13 @@ export class ListUploadedFileContainerComponent implements OnInit {
     this.fileList$ = this.service.getFile()
   }
 
+  // delete file
+  public deleteFile(id:number){
+    this.service.deleteFile(id).subscribe(res =>
+      this.fileList$ = this.service.getFile() 
+    );
+  }
+
 
 
 }

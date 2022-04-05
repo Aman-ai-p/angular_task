@@ -20,7 +20,8 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
   exports : [
     PaginationComponent,
     SearchComponent,
-    FiledragDirective
+    FiledragDirective,
+    DatepickerComponent
   ]
 })
 export class SharedModule { }
