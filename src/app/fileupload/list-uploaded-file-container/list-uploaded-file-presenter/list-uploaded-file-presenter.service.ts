@@ -30,7 +30,7 @@ export class ListUploadedFilePresenterService {
     while(charLength--){
       // charCodeAt() returns the Unicode value of the character at the specified location
       mBuffer[charLength] = char.charCodeAt(charLength); 
-    }
+    } 
     const blob = new Blob([mBuffer], {type : type})
     const url = URL.createObjectURL(blob);
     window.open(url)

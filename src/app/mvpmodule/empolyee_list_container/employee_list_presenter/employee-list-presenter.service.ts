@@ -75,8 +75,7 @@ export class EmployeeListPresenterService {
       let data = this._filterFormData.map((item : any) => { return Object.keys(item)});
       console.log(data)
       let datakey = data[0];
-      datakey.forEach((item:any) => {
-        
+      datakey.forEach((item:any) => {   
         if(res[item]){
           this._filterFormData = this._filterFormData.filter((data: any)=>{
             return data[item].toString().toLowerCase() == res[item].toString().toLowerCase()

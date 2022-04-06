@@ -31,7 +31,8 @@ const routes: Routes = [
   { 
     path: 'js', loadChildren: () => import('./js/js.module').then(m => m.JSModule) 
   },
-  { path: 'dragdrop', loadChildren: () => import('./dragdrop/dragdrop.module').then(m => m.DragdropModule) },
+  { 
+    path: 'dragdrop', loadChildren: () => import('./dragdrop/dragdrop.module').then(m => m.DragdropModule) },
   { path: 'fileupload', loadChildren: () => import('./fileupload/fileupload.module').then(m => m.FileuploadModule) }
 ];
 
