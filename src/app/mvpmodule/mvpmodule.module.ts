@@ -13,6 +13,7 @@ import { MvpService } from './mvp.service';
 import { FilterPresentationComponent } from './empolyee_list_container/employee_list_presentation/filter-presentation/filter-presentation.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { SharedModule } from '../shared/shared.module';
+import { EmployeeData } from './employee.model';
 
 
 

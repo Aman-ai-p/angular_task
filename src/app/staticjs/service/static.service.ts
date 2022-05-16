@@ -6,9 +6,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
 import { StaticJs } from '../models/static.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class StaticService {
 
   apiLink : string

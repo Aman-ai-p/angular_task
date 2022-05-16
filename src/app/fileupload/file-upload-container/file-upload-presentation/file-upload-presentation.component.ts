@@ -29,6 +29,7 @@ export class FileUploadPresentationComponent implements OnInit {
   @Output() fileUpload : EventEmitter<FileData>;
 
   public file : File[];
+  public imageFile : File;
 
   constructor(private service: FileuploadpresenterService) { 
     this.fileUpload = new EventEmitter();
@@ -55,4 +56,13 @@ export class FileUploadPresentationComponent implements OnInit {
       this.fileUpload.emit(res);
     })
   }
+
+  // img
+  // img(imgFile: any){
+  //   this.imageFile = imgFile[0];
+  //   console.log(imgFile[0]);
+  // }
+  // show(){
+  //   console.log(this.imageFile);
+  // }
 }

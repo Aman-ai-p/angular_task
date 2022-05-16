@@ -33,7 +33,8 @@ const routes: Routes = [
   },
   { 
     path: 'dragdrop', loadChildren: () => import('./dragdrop/dragdrop.module').then(m => m.DragdropModule) },
-  { path: 'fileupload', loadChildren: () => import('./fileupload/fileupload.module').then(m => m.FileuploadModule) }
+  { path: 'fileupload', loadChildren: () => import('./fileupload/fileupload.module').then(m => m.FileuploadModule) },
+  { path: 'infinite-scroll', loadChildren: () => import('./infinite-scroll/infinite-scroll.module').then(m => m.InfiniteScrollModule) }
 ];
 
 @NgModule({
