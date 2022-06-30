@@ -5,6 +5,7 @@ import { CreateprescriptionRoutingModule } from './createprescription-routing.mo
 import { CreateprescriptionComponent } from './createprescription.component';
 import { CreateprescriptioncontainerComponent } from './createprescriptioncontainer/createprescriptioncontainer.component';
 import { CreateprescriptionpresentationComponent } from './createprescriptioncontainer/createprescriptionpresentation/createprescriptionpresentation.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { CreateprescriptionpresentationComponent } from './createprescriptioncon
   ],
   imports: [
     CommonModule,
-    CreateprescriptionRoutingModule
+    CreateprescriptionRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CreateprescriptionModule { }

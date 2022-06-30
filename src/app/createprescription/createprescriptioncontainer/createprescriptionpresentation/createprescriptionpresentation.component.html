@@ -1,45 +1,23 @@
-<div class="container bg-gray h-100">
-      <div class="box">
-
-      </div>
+<div class="row">
+      <form class="col-6" [formGroup]="validForm">
+            <div class="mb-4">
+                  <label for="mode" class="form-label">Select:</label>
+                  <select formControlName="mode" class="form-select" name="mode" id="mode">
+                        <option value="mail">Mail</option>
+                        <option value="phoneNumber">Phone Number</option>
+                  </select>
+            </div>
+            <div class="mb-4">
+                  <label for="mobileNumber" class="form-label">Mobile Number:</label>
+                  <input formControlName="phoneNumber" type="number" class="form-control" name="mobileNumber">
+            </div>
+            <div class="mb-4">
+                  <label for="mail" class="form-label">Email ID:</label>
+                  <input formControlName="email" type="email" class="form-control" name="mail">
+            </div>
+            <button class="btn text-white" (click)="submit()" 
+                  [ngClass]="validForm.valid? 'btn-primary': 'd-none'">
+                  Submit
+            </button>
+      </form>
 </div>
-
-
-
-
-<!-- <div class="row">
-      <div class="col-4">
-            <form class="form-group">
-                  <div class="form-floating my-2">
-                        <input type="number" class="form-control" id="phoneNumber">
-                        <label for="phoneNumber">Phone Number</label>
-                  </div>
-                  <div class="form-floating my-2">
-                        <input type="text" class="form-control" id="name">
-                        <label for="name">Name</label>
-                  </div>
-                  <div class="form-floating my-2">
-                        <input type="date" class="form-control" id="expiryDate">
-                        <label for="expiryDate">Expiry Date</label>
-                  </div>
-                  <div class="form-floating my-2">
-                        <select type="select" class="form-control" id="diseases">
-                              <option value=""></option>
-                        </select>
-                        <label for="diseases">Diseases</label>
-                  </div>
-            </form>
-            <form class="form-group">
-                  <div class="form-floating my-2">
-                        <select type="select" class="form-control" id="medicine">
-                              <option value=""></option>
-                        </select>
-                        <label for="medicine">Medicine</label>
-                  </div>
-            </form>
-      </div>
-      <div class="col-8">
-
-      </div>
-</div> -->
-
